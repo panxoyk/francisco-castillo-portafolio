@@ -5,9 +5,9 @@ export default {
 		colors: {
 			"primary": "#13351f",
 			"accent": "#059547",
+			"light": "#f2ebe2",
 			"success": "#22d85e",
 			"danger": "#df3c48",
-			"light": "#f2ebe2",
 			"black": "#050506",
 			"white": "#f5f1f3",
 		},
@@ -17,5 +17,7 @@ export default {
 		},
 		extend: {},
 	},
-	plugins: [],
+	plugins: [
+		require('tailwindcss-animated')
+	],
 }
