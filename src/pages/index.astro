@@ -34,18 +34,24 @@ const github: string = "https://github.com/panxoyk"
                 <Button label="Visualizar CV" />
                 <Navbar menuItems={menuItems} />
             </div>
-            <div class="mt-20 flex flex-row items-center justify-start gap-4">
-                <button id="email-button" class="border rounded-full px-4 py-1 border-black text-black hover:">
-                    {email}
-                </button>
-                <a href={linkedin}>
-                    <Linkedin class="size-8 fill-[#0A66C2]" />
+            <div class=" mt-40 flex flex-row items-center justify-start gap-4">
+                <div class=" group:">
+                    <button
+                    id="email-button"
+                    class="h-8 border rounded-full px-4 py-1 border-black text-black hover:scale-105 transition duration-300 ease-in"
+                    title="Copy email"
+                    >
+                        {email}
+                    </button>
+                </div>
+                <a href={linkedin} title="Linkedin">
+                    <Linkedin class="size-8 fill-[#0A66C2] hover:scale-105 transition duration-300 ease-in" />
                 </a>
-                <a href={github}>
-                    <Github class="size-8 fill-black" />
+                <a href={github} title="Github">
+                    <Github class="size-8 fill-black hover:scale-105 transition duration-300 ease-in" />
                 </a>
             </div>
-            <h1 class="mt-4 text-6xl font-extrabold text-primary"> Francisco Castillo Hernández </h1>
+            <h1 class="mt-4 text-7xl font-extrabold text-primary"> Francisco Castillo Hernández </h1>
         </Container>
     </header>
 </Layout>
