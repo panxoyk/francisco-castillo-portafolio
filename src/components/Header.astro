@@ -1,0 +1,100 @@
+---
+import type { MenuItem } from "../types";
+import Container from "./Container.astro";
+import CopyEmail from "./CopyEmail.tsx";
+import MenuIcon from "./icons/Menu.astro";
+import CloseIcon from "./icons/Close.astro";
+import GithubIcon from "./icons/Github.astro";
+import LinkedinIcon from "./icons/Linkedin.astro";
+import NavbarItem from "./NavbarItem.astro";
+
+const menuItems: MenuItem[] = [
+    {
+        name: "Cv",
+        path: "#cv"
+    },
+    {
+        name: "Sobre mí",
+        path: "#about",
+    },
+    {
+        name: "Proyectos",
+        path: "#projects",
+    },
+    {
+        name: "Contacto",
+        path: "#contact",
+    },
+]
+
+const email = "francisco.cstllhrnndz@gmail.com"
+const linkedin = "https://www.linkedin.com/in/francisco-castillo-hern%C3%A1ndez-417a692a2"
+const github =  "https://github.com/panxoyk"
+
+---
+
+
+<header class="#inicio">
+    <div class="md:hidden top-0 left-0 absolute w-full z-10 bg-background border border-primary border-opacity-25 rounded-xl">
+        <button id="menu-button" class="py-2 md:hidden flex justify-center w-full border-black rounded-xl">
+            <MenuIcon class="size-8 stroke-primary" />
+        </button>
+        <div id="menu" class="hidden py-2 w-full flex-col items-center justify-start h-screen">
+            <button id="close-button" class="w-full flex justify-center">
+                <CloseIcon class="size-8 stroke-primary" />
+            </button>
+            <nav class="flex flex-col items-center justify-between h-3/5 my-auto w-full">
+                {
+                    menuItems.map((item) => <NavbarItem menuItem={item} />)
+                }
+                <div class="md:hidden flex flex-row justify-evenly w-1/2 p-2">
+                    <a href={linkedin}>
+                        <LinkedinIcon class="size-8 fill-primary hover:scale-105 transition duration-300 ease-in" />
+                    </a>
+                    <a href={github}>
+                        <GithubIcon class="size-8 fill-primary hover:scale-105 transition duration-300 ease-in" />
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <Container class="relative z-5">
+        <div class="hidden py-8 md:flex flex-row items-center justify-between">
+            <nav class="flex flex-row items-center justify-between gap-4 h-3/5 my-auto w-full">
+                {
+                    menuItems.map((item) => <NavbarItem menuItem={item} />)
+                }
+            </nav>
+        </div>
+        <div class="mt-40 flex flex-row items-center w-full gap-4 justify-center md:justify-start">
+            <CopyEmail email={email} client:load />
+            <a href={linkedin} class="hidden md:flex">
+                <LinkedinIcon class="size-8 fill-[#0A66C2] hover:scale-105 transition duration-300 ease-in" />
+            </a>
+            <a href={github} class="hidden md:flex">
+                <GithubIcon class="size-8 fill-black hover:scale-105 transition duration-300 ease-in" />
+            </a>
+        </div>
+        <h1 class="mt-4 text-4xl min-[320px]:text-5xl md:text-6xl font-extrabold text-primary text-center md:text-left">
+            Hola, soy Francisco Castillo Hernández
+        </h1>
+    </Container>
+</header>
+
+<script>
+    const menuButton = document.querySelector("#menu-button")
+    const closeButton = document.querySelector("#close-button")
+    const menu = document.querySelector("#menu")
+
+    menuButton?.addEventListener("click", (): void => {
+        menuButton.classList.add("hidden")
+        menu?.classList.remove("hidden")
+        menu?.classList.add("flex")
+    })
+
+    closeButton?.addEventListener("click", (): void => {
+        menuButton?.classList.remove("hidden")
+        menu?.classList.remove("flex")
+        menu?.classList.add("hidden")
+    })
+</script>

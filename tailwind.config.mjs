@@ -3,9 +3,9 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		colors: {
-			"primary": "#13351f",
-			"accent": "#059547",
-			"light": "#f2ebe2",
+			"background": "#faf8fd",
+			"primary": "#2d2523",
+			"accent": "#136df5",
 			"success": "#22d85e",
 			"danger": "#df3c48",
 			"black": "#050506",
