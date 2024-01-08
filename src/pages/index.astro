@@ -1,16 +1,19 @@
 ---
 import type { MenuItem } from "../types";
 import Layout from "../layouts/Layout.astro";
-import Button from "../components/Button.astro";
 import Container from "../components/Container.astro";
-import Navbar from "../components/Navbar.astro";
-import GithubIcon from "../components/icons/Github.astro";
-import LinkedinIcon from "../components/icons/Linkedin.astro";
 import CopyEmail from "../components/CopyEmail.tsx";
 import MenuIcon from "../components/icons/Menu.astro";
 import CloseIcon from "../components/icons/Close.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import LinkedinIcon from "../components/icons/Linkedin.astro";
+import NavbarItem from "../components/NavbarItem.astro";
 
 const menuItems: MenuItem[] = [
+    {
+        name: "Cv",
+        path: "#cv"
+    },
     {
         name: "Sobre mí",
         path: "#about",
@@ -25,9 +28,9 @@ const menuItems: MenuItem[] = [
     },
 ]
 
-const email: string = "francisco.cstllhrnndz@gmail.com"
-const linkedin: string = "https://www.linkedin.com/in/francisco-castillo-hern%C3%A1ndez-417a692a2"
-const github: string = "https://github.com/panxoyk"
+const email = "francisco.cstllhrnndz@gmail.com"
+const linkedin = "https://www.linkedin.com/in/francisco-castillo-hern%C3%A1ndez-417a692a2"
+const github =  "https://github.com/panxoyk"
 ---
 
 <Layout title="Inicio">
@@ -40,28 +43,16 @@ const github: string = "https://github.com/panxoyk"
                 <button id="close-button" class="w-full flex justify-center">
                     <CloseIcon class="size-8" />
                 </button>
-                <nav class="flex flex-col md:flex-row items-center justify-between md:gap-4 md:m-0 h-3/5 my-auto">
-                    <a class="uppercase font-semibold tracking-wide text-black text-lg py-2 w-full text-center" href="#cv">
-                        cv
-                    </a>
+                <nav class="flex flex-col items-center justify-between h-3/5 my-auto w-full">
                     {
-                        menuItems.map((item) => (
-                            <a
-                            class="
-                            uppercase font-semibold tracking-wide text-black text-lg py-2 w-full text-center
-                            "
-                            href={item.path}
-                            >
-                                {item.name}
-                            </a>
-                        ))
+                        menuItems.map((item) => <NavbarItem menuItem={item} />)
                     }
-                    <div class="flex flex-row justify-evenly w-full py-2">
-                        <a href={linkedin} class="p-2">
-                            <LinkedinIcon class="size-8 fill-black hover:scale-105 transition duration-300 ease-in" />
+                    <div class="md:hidden flex flex-row justify-evenly w-1/2 p-2">
+                        <a href={linkedin}>
+                            <LinkedinIcon class="size-8 fill-primary hover:scale-105 transition duration-300 ease-in" />
                         </a>
-                        <a href={github} class="p-2">
-                            <GithubIcon class="size-8 fill-black hover:scale-105 transition duration-300 ease-in" />
+                        <a href={github}>
+                            <GithubIcon class="size-8 fill-primary hover:scale-105 transition duration-300 ease-in" />
                         </a>
                     </div>
                 </nav>
@@ -69,8 +60,11 @@ const github: string = "https://github.com/panxoyk"
         </div>
         <Container class="relative z-5">
             <div class="hidden py-8 md:flex flex-row items-center justify-between">
-                <Button label="Visualizar CV" />
-                <Navbar menuItems={menuItems} />
+                <nav class="flex flex-row items-center justify-between gap-4 h-3/5 my-auto w-full">
+                    {
+                        menuItems.map((item) => <NavbarItem menuItem={item} />)
+                    }
+                </nav>
             </div>
             <div class="mt-40 flex flex-row items-center w-full gap-4 justify-center md:justify-start">
                 <CopyEmail email={email} client:load />

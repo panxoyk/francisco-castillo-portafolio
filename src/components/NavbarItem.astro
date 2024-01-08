@@ -1,0 +1,13 @@
+---
+import type { MenuItem } from "../types";
+
+type Props = {
+    menuItem: MenuItem,
+}
+
+const { menuItem } = Astro.props
+---
+
+<a class="uppercase p-2 font-semibold tracking-wide text-primary text-base w-fit text-center" href={menuItem.path}>
+    {menuItem.name}
+</a>
