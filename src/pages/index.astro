@@ -4,8 +4,11 @@ import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import Container from "../components/Container.astro";
 import Navbar from "../components/Navbar.astro";
-import Github from "../components/icons/Github.astro";
-import Linkedin from "../components/icons/Linkedin.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import LinkedinIcon from "../components/icons/Linkedin.astro";
+import CopyEmail from "../components/CopyEmail.tsx";
+import MenuIcon from "../components/icons/Menu.astro";
+import CloseIcon from "../components/icons/Close.astro";
 
 const menuItems: MenuItem[] = [
     {
@@ -28,38 +31,75 @@ const github: string = "https://github.com/panxoyk"
 ---
 
 <Layout title="Inicio">
-    <header>
-        <Container>
-            <div class="py-8 flex flex-row items-center justify-between">
+    <header class="#inicio">
+        <div class="md:hidden top-0 left-0 absolute w-full z-10 bg-light border border-black rounded-xl">
+            <button id="menu-button" class="py-2 md:hidden flex justify-center w-full border-black rounded-xl">
+                <MenuIcon class="size-8" />
+            </button>
+            <div id="menu" class="hidden py-2 w-full flex-col items-center justify-start h-screen">
+                <button id="close-button" class="w-full flex justify-center">
+                    <CloseIcon class="size-8" />
+                </button>
+                <nav class="flex flex-col md:flex-row items-center justify-between md:gap-4 md:m-0 h-3/5 my-auto">
+                    <a class="uppercase font-semibold tracking-wide text-black text-lg py-2 w-full text-center" href="#cv">
+                        cv
+                    </a>
+                    {
+                        menuItems.map((item) => (
+                            <a
+                            class="
+                            uppercase font-semibold tracking-wide text-black text-lg py-2 w-full text-center
+                            "
+                            href={item.path}
+                            >
+                                {item.name}
+                            </a>
+                        ))
+                    }
+                    <div class="flex flex-row justify-evenly w-full py-2">
+                        <a href={linkedin} class="p-2">
+                            <LinkedinIcon class="size-8 fill-black hover:scale-105 transition duration-300 ease-in" />
+                        </a>
+                        <a href={github} class="p-2">
+                            <GithubIcon class="size-8 fill-black hover:scale-105 transition duration-300 ease-in" />
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <Container class="relative z-5">
+            <div class="hidden py-8 md:flex flex-row items-center justify-between">
                 <Button label="Visualizar CV" />
                 <Navbar menuItems={menuItems} />
             </div>
-            <div class=" mt-40 flex flex-row items-center justify-start gap-4">
-                <div class=" group:">
-                    <button
-                    id="email-button"
-                    class="h-8 border rounded-full px-4 py-1 border-black text-black hover:scale-105 transition duration-300 ease-in"
-                    title="Copy email"
-                    >
-                        {email}
-                    </button>
-                </div>
-                <a href={linkedin} title="Linkedin">
-                    <Linkedin class="size-8 fill-[#0A66C2] hover:scale-105 transition duration-300 ease-in" />
+            <div class="mt-40 flex flex-row items-center w-full gap-4 justify-center md:justify-start">
+                <CopyEmail email={email} client:load />
+                <a href={linkedin} class="hidden md:flex">
+                    <LinkedinIcon class="size-8 fill-[#0A66C2] hover:scale-105 transition duration-300 ease-in" />
                 </a>
-                <a href={github} title="Github">
-                    <Github class="size-8 fill-black hover:scale-105 transition duration-300 ease-in" />
+                <a href={github} class="hidden md:flex">
+                    <GithubIcon class="size-8 fill-black hover:scale-105 transition duration-300 ease-in" />
                 </a>
             </div>
-            <h1 class="mt-4 text-7xl font-extrabold text-primary"> Francisco Castillo Hernández </h1>
+            <h1 class="mt-4 text-4xl min-[320px]:text-5xl md:text-6xl font-extrabold text-primary text-center md:text-left">  Hola, soy Francisco Castillo Hernández. </h1>
         </Container>
     </header>
 </Layout>
+
 <script>
-    const emailButton = document.querySelector("#email-button")
-    emailButton?.addEventListener("click", () => {
-        const email = emailButton.textContent
-        navigator.clipboard.writeText(email!!)
+    const menuButton = document.querySelector("#menu-button")
+    const closeButton = document.querySelector("#close-button")
+    const menu = document.querySelector("#menu")
+
+    menuButton?.addEventListener("click", (): void => {
+        menuButton.classList.add("hidden")
+        menu?.classList.remove("hidden")
+        menu?.classList.add("flex")
     })
-    console.log(emailButton?.textContent)
+
+    closeButton?.addEventListener("click", (): void => {
+        menuButton?.classList.remove("hidden")
+        menu?.classList.remove("flex")
+        menu?.classList.add("hidden")
+    })
 </script>
