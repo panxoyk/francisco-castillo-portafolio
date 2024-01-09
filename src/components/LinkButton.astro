@@ -1,0 +1,17 @@
+---
+type Props = {
+    label: string,
+    href: string,
+}
+
+const { label, href } = Astro.props
+---
+
+<a
+href={href}
+class="cursor-pointer font-semibold uppercase overflow-hidden relative z-0 border border-primary group px-6 py-3 rounded-full"
+>
+    <span class="relative z-10 text-primary group-hover:text-background text-base tracking-wide duration-500"> {label} </span>
+    <span class="absolute w-full h-full bg-accent -left-40 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+    <span class="absolute w-full h-full bg-accent -right-40 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+</a>
