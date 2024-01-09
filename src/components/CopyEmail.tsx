@@ -15,6 +15,7 @@ const CopyEmail = ({ email }: CopyEmailProps) => {
             <button
             className="h-8 border min-w-max text-sm rounded-full px-4 py-1 border-accent text-primary hover:scale-110 transition duration-300 ease-in flex flex-row justify-between items-center gap-2"
             onClick={handleOnCLick}
+            title="Copiar email"
             >
                 <img width={"20px"} src="send.svg" alt="Icono enviar mensaje" />
                 <span>

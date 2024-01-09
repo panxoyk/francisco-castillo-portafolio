@@ -40,11 +40,11 @@ const github =  "https://github.com/panxoyk"
 
 <header class="#inicio">
     <div class="md:hidden top-0 left-0 absolute w-full z-20 bg-background border border-primary border-opacity-25 rounded-lg">
-        <button id="menu-button" class="py-2 md:hidden flex justify-center w-full border-black rounded-lg">
+        <button id="menu-button" class="py-2 md:hidden flex justify-center w-full border-black rounded-lg" title="Abrir menú">
             <MenuIcon class="size-8 stroke-primary" />
         </button>
         <div id="menu" class="hidden py-2 w-full flex-col items-center justify-start h-screen">
-            <button id="close-button" class="w-full flex justify-center">
+            <button id="close-button" class="w-full flex justify-center" title="Cerrar menú">
                 <CloseIcon class="size-8 stroke-primary" />
             </button>
             <nav class="flex flex-col items-center justify-between h-3/5 my-auto w-full">
@@ -52,10 +52,10 @@ const github =  "https://github.com/panxoyk"
                     menuItems.map((item) => <NavbarItem menuItem={item} />)
                 }
                 <div class="md:hidden flex flex-row justify-evenly w-1/2 p-2">
-                    <a href={linkedin}>
+                    <a href={linkedin} title="Linkedin">
                         <LinkedinIcon class="size-8 fill-primary hover:scale-150 transition duration-300 ease-in" />
                     </a>
-                    <a href={github}>
+                    <a href={github} title="Github">
                         <GithubIcon class="size-8 fill-primary hover:scale-150 transition duration-300 ease-in" />
                     </a>
                 </div>
@@ -72,10 +72,10 @@ const github =  "https://github.com/panxoyk"
         </div>
         <div class="mt-40 flex flex-row items-center w-full gap-4 justify-center md:justify-start">
             <CopyEmail email={email} client:load />
-            <a href={linkedin} class="hidden md:flex">
+            <a href={linkedin} class="hidden md:flex" title="Linkedin">
                 <LinkedinIcon class="size-8 fill-[#0A66C2] hover:scale-125 transition duration-300 ease-in" />
             </a>
-            <a href={github} class="hidden md:flex">
+            <a href={github} class="hidden md:flex" title="Github">
                 <GithubIcon class="size-8 fill-black hover:scale-125 transition duration-300 ease-in" />
             </a>
         </div>
