@@ -52,3 +52,9 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## To-Do
+
+- Animacion a boton de menu para celulares.
+- Que no permita scrollear al abrir el menu para celulares
+- Imagen animada en el header (foto de perfil, diseño random, dibujo animado, ...etc)
