@@ -33,11 +33,10 @@ const menuItems: MenuItem[] = [
 const email = "francisco.cstllhrnndz@gmail.com"
 const linkedin = "https://www.linkedin.com/in/francisco-castillo-hern%C3%A1ndez-417a692a2"
 const github =  "https://github.com/panxoyk"
-
 ---
 
 
-<header class="#inicio">
+<header id="#inicio" class="min-h-screen">
     <div class="md:hidden top-0 left-0 absolute w-full z-20 bg-background border border-primary border-opacity-25 rounded-lg">
         <button id="menu-button" class="py-2 md:hidden flex justify-center w-full border-black rounded-lg" title="Abrir menú">
             <MenuIcon class="size-8 stroke-primary" />
@@ -78,13 +77,13 @@ const github =  "https://github.com/panxoyk"
                 <LinkedinIcon class="size-8 fill-[#0A66C2] hover:scale-125 transition duration-300 ease-in" />
             </a>
         </div>
-        <h1 class="py-4 text-5xl min-[370px]:text-6xl min-[460px]:text-7xl sm:text-8xl font-extrabold text-primary text-center md:text-left text-balance">
+        <h1 class="py-4 text-5xl se:text-6xl min-[460px]:text-7xl sm:text-8xl font-extrabold text-primary text-center md:text-left text-balance">
             Francisco Castillo H.
         </h1>
-        <p class="gap-1 font-bold text-lg md:text-2xl pb-4 text-primary text-pretty text-center md:text-start font-jetbrains">
-            <span class="text-accent"> &lt;</span>Desarrollador web full-stack <span class="text-accent">/&gt;</span>
+        <p class="gap-1 font-bold text-lg md:text-2xl pb-4 text-primary text-center md:text-start font-jetbrains text-pretty se:text-nowrap">
+            <span class="text-accent"> &lt;</span>Desarrollador web full-stack<span class="text-accent ml-2">/&gt;</span>
         </p>
-        <div class="flex flex-row justify-center md:justify-start items-center py-4">
+        <div class="flex flex-row justify-center md:justify-start items-center my-4">
             <LinkButton label="Descargar CV" href="cv_2024_FranciscoCastillo.pdf" />
         </div>
     </Container>

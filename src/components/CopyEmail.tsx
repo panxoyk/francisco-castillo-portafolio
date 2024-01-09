@@ -13,7 +13,7 @@ const CopyEmail = ({ email }: CopyEmailProps) => {
     return (
         <div>
             <button
-            className="h-8 border min-w-max text-sm p-2 border-accent text-primary hover:scale-110 transition duration-300 ease-in flex flex-row justify-between items-center gap-2"
+            className="h-8 border min-w-max text-sm p-2 border-black border-opacity-25 text-black hover:scale-110 transition duration-300 ease-in flex flex-row justify-between items-center gap-2"
             onClick={handleOnCLick}
             title="Copiar email"
             >

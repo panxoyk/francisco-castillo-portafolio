@@ -20,6 +20,9 @@ export default {
 				inter: ["Inter", "sans-serif"],
 				jetbrains: ["JetBrains Mono", "monospace"]
 			},
+			screens: {
+				"se": "min-[370px]"
+			}
 		},
 	},
 	plugins: [],
