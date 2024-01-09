@@ -1,12 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import LinkButton from "../components/LinkButton.astro";
+import Container from "../components/Container.astro";
 ---
 
 <Layout title="Not Found">
-    <div class="flex flex-col items-center justify-center h-screen gap-2">
-        <h1 class="font-bold text-9xl"> 404 </h1>
-        <p class="text-xl m-0 text-center mb-4"> Esta página no existe, comprueba la url </p>
-        <LinkButton label="Ir al inicio" href="/" />
-    </div>
+    <Container>
+        <div class="flex flex-col items-center justify-center h-screen">
+            <h1 class="font-bold text-9xl w-full text-center"> 404 </h1>
+            <p class="text-xl text-center mb-8 text-balance"> Esta página no existe, comprueba la url </p>
+            <LinkButton label="Ir al inicio" href="/" />
+        </div>
+    </Container>
 </Layout>

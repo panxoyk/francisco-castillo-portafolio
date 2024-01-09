@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
 import Header from "../components/Header.astro";
+import MapPin from "../components/icons/MapPin.astro";
 ---
 
 <Layout title="Inicio">
@@ -9,6 +10,12 @@ import Header from "../components/Header.astro";
     <Container>
         <section id="about" class="hidden">
             <h1> Sobre mí </h1>
+            <p class="flex-row items-center justify-center md:justify-start gap-1 font-bold text-xl py-4 text-accent hidden">
+                <MapPin class="size-5 fill-accent" /> Santiago, Chile.
+            </p>
+            <p class="text-center md:text-left font-semibold text-primary my-4 hidden">
+                Hola, soy Francisco Castillo Hernández y me apasiona el desarrollo web. En mi tiempo libre, me dedico a crear aplicaciones web usando TypeScript, React y Node.js.
+            </p>
 
         </section>
         <section id="projects" class="hidden">
