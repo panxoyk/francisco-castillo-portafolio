@@ -18,11 +18,11 @@ export default {
 			},
 			fontFamily: {
 				inter: ["Inter", "sans-serif"],
-				jetbrains: ["JetBrains Mono", "monospace"]
+				jetbrains: ["JetBrains Mono", "monospace"],
 			},
 			screens: {
-				"se": "min-[370px]"
-			}
+				"se": "370px",
+			},
 		},
 	},
 	plugins: [],
