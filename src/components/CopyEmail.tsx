@@ -1,10 +1,7 @@
 import { Toaster, toast } from "sonner"
+import { email } from "../data";
 
-type CopyEmailProps = {
-    email: string,
-}
-
-const CopyEmail = ({ email }: CopyEmailProps) => {
+const CopyEmail = () => {
     const handleOnCLick = () => {
         navigator.clipboard.writeText(email)
         toast("Copied!")

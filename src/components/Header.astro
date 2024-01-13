@@ -1,108 +1,46 @@
 ---
-import type { MenuItem } from "../types";
+import { email, github, linkedin, menuItems } from "../data";
 
 import Container from "./Container.astro";
 import CopyEmail from "./CopyEmail.tsx";
 import NavbarItem from "./NavbarItem.astro";
-
-import MenuIcon from "./icons/Menu.astro";
-import CloseIcon from "./icons/Close.astro";
-import GithubIcon from "./icons/Github.astro";
-import LinkedinIcon from "./icons/Linkedin.astro";
 import LinkButton from "./LinkButton.astro";
 
-const menuItems: MenuItem[] = [
-    {
-        name: "Inicio",
-        path: "#home",
-    },
-    {
-        name: "Sobre mí",
-        path: "#about",
-    },
-    {
-        name: "Proyectos",
-        path: "#projects",
-    },
-    {
-        name: "Contacto",
-        path: "#contact",
-    },
-]
-
-const email = "francisco.cstllhrnndz@gmail.com"
-const linkedin = "https://www.linkedin.com/in/francisco-castillo-hern%C3%A1ndez-417a692a2"
-const github =  "https://github.com/panxoyk"
+import GithubIcon from "./icons/Github.astro";
+import LinkedinIcon from "./icons/Linkedin.astro";
+import MobileMenu from "./MobileMenu.astro";
 ---
 
 
-<header id="#inicio" class="min-h-screen">
-    <div class="md:hidden top-0 left-0 absolute w-full z-20 bg-background border border-primary border-opacity-25 rounded-lg">
-        <button id="menu-button" class="py-2 md:hidden flex justify-center w-full border-black rounded-lg" title="Abrir menú">
-            <MenuIcon class="size-8 stroke-primary" />
-        </button>
-        <div id="menu" class="hidden py-2 w-full flex-col items-center justify-start h-screen">
-            <button id="close-button" class="w-full flex justify-center" title="Cerrar menú">
-                <CloseIcon class="size-8 stroke-primary" />
-            </button>
-            <nav class="flex flex-col items-center justify-between h-3/5 my-auto w-full">
-                {
-                    menuItems.map((item) => <NavbarItem menuItem={item} />)
-                }
-                <div class="md:hidden flex flex-row justify-evenly w-1/2 p-2">
-                    <a href={linkedin} title="Linkedin">
-                        <LinkedinIcon class="size-8 fill-primary hover:scale-150 transition duration-300 ease-in" />
-                    </a>
-                    <a href={github} title="Github">
-                        <GithubIcon class="size-8 fill-primary hover:scale-150 transition duration-300 ease-in" />
-                    </a>
-                </div>
-            </nav>
-        </div>
-    </div>
-    <Container class="relative z-5">
-        <div class="hidden py-8 md:flex flex-row items-center justify-between">
+<header id="home">
+    <MobileMenu />
+    <Container>
+        <div class="py-8 hidden md:flex flex-row items-center justify-between">
             <nav class="flex flex-row items-center justify-between gap-4 h-3/5 my-auto w-full">
                 {
                     menuItems.map((item) => <NavbarItem menuItem={item} />)
                 }
             </nav>
         </div>
-        <div class="mt-36 py-4 flex flex-row items-center w-full gap-4 justify-center md:justify-start">
-            <CopyEmail email={email} client:load />
-            <a href={github} class="hidden md:flex" title="Github">
-                <GithubIcon class="size-8 fill-black hover:scale-125 transition duration-300 ease-in" />
-            </a>
-            <a href={linkedin} class="hidden md:flex" title="Linkedin">
-                <LinkedinIcon class="size-8 fill-[#0A66C2] hover:scale-125 transition duration-300 ease-in" />
-            </a>
-        </div>
-        <h1 class="py-4 text-5xl se:text-6xl min-[460px]:text-7xl sm:text-8xl font-extrabold text-primary text-center md:text-left text-balance">
-            Francisco Castillo H.
-        </h1>
-        <p class="gap-1 font-bold text-lg md:text-2xl pb-4 text-primary text-center md:text-start font-jetbrains text-pretty se:text-nowrap">
-            <span class="text-accent"> &lt;</span>Desarrollador web full-stack<span class="text-accent ml-2">/&gt;</span>
-        </p>
-        <div class="flex flex-row justify-center md:justify-start items-center my-4">
-            <LinkButton label="Descargar CV" href="cv_2024_FranciscoCastillo.pdf" />
-        </div>
+        <section class="py-36 min-h-screen">
+            <div class="py-4 flex flex-row items-center w-full gap-4 justify-center md:justify-start">
+                <CopyEmail client:load />
+                <a href={github} class="hidden md:flex" title="Github">
+                    <GithubIcon class="size-8 fill-black hover:scale-125 transition duration-300 ease-in" />
+                </a>
+                <a href={linkedin} class="hidden md:flex" title="Linkedin">
+                    <LinkedinIcon class="size-8 fill-[#0A66C2] hover:scale-125 transition duration-300 ease-in" />
+                </a>
+            </div>
+            <h1 class="py-4 text-5xl se:text-6xl min-[460px]:text-7xl sm:text-8xl font-extrabold text-primary text-center md:text-left text-balance">
+                Francisco Castillo H.
+            </h1>
+            <p class="gap-1 font-bold text-lg md:text-2xl pb-4 text-primary text-center md:text-start font-jetbrains text-pretty se:text-nowrap">
+                <span class="text-accent"> &lt;</span>Desarrollador web full-stack<span class="text-accent ml-2">/&gt;</span>
+            </p>
+            <div class="flex flex-row justify-center md:justify-start items-center my-4">
+                <LinkButton label="Descargar CV" href="cv_2024_FranciscoCastillo.pdf" />
+            </div>
+        </section>
     </Container>
 </header>
-
-<script>
-    const menuButton = document.querySelector("#menu-button")
-    const closeButton = document.querySelector("#close-button")
-    const menu = document.querySelector("#menu")
-
-    menuButton?.addEventListener("click", (): void => {
-        menuButton.classList.add("hidden")
-        menu?.classList.remove("hidden")
-        menu?.classList.add("flex")
-    })
-
-    closeButton?.addEventListener("click", (): void => {
-        menuButton?.classList.remove("hidden")
-        menu?.classList.remove("flex")
-        menu?.classList.add("hidden")
-    })
-</script>

@@ -55,6 +55,4 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ## To-Do
 
-- Animacion a boton de menu para celulares.
-- Que no permita scrollear al abrir el menu para celulares
 - Imagen animada en el header (foto de perfil, diseño random, dibujo animado, ...etc)
