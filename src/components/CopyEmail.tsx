@@ -1,8 +1,9 @@
+import type { ReactElement } from "react";
 import { Toaster, toast } from "sonner"
 import { email } from "../data";
 
-const CopyEmail = () => {
-    const handleOnCLick = () => {
+const CopyEmail = (): ReactElement => {
+    const handleOnCLick = (): void => {
         navigator.clipboard.writeText(email)
         toast("Copied!")
     }
@@ -10,11 +11,12 @@ const CopyEmail = () => {
     return (
         <div>
             <button
-            className="h-8 border min-w-max text-sm p-2 border-black border-opacity-25 text-black hover:scale-110 transition duration-300 ease-in flex flex-row justify-between items-center gap-2"
-            onClick={handleOnCLick}
-            title="Copiar email"
+                onClick={handleOnCLick}
+                title="Copiar email"
+                className="flex flex-row justify-between items-center gap-2 h-8 min-w-max p-2 text-sm text-black
+                border border-black border-opacity-25 hover:scale-110 transition ease-in duration-300"
             >
-                <img width={"20px"} height={"20px"} src="send.svg" alt="Icono enviar mensaje" />
+                <img src="send.svg" width={"20px"} height={"20px"} alt="Icono enviar mensaje" />
                 <span>
                     {email}
                 </span>
@@ -28,6 +30,6 @@ const CopyEmail = () => {
             }} />
         </div>
     )
-}
+};
 
-export default CopyEmail
+export default CopyEmail;

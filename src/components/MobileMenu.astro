@@ -4,18 +4,34 @@ import NavbarItem from "./NavbarItem.astro";
 import GithubIcon from "./icons/Github.astro";
 import LinkedinIcon from "./icons/Linkedin.astro";
 ---
+
 <div class="relative">
-    <button id="menu-button" class="bg-background py-4 md:hidden flex justify-center w-full border border-black border-opacity-25 group fixed z-30 top-0 left-0 shadow" title="Abrir menú">
-        <div class="flex flex-col justify-between w-[20px] h-[20px] overflow-hidden">
-            <div id="menu-up" class="bg-accent h-[2px] w-7 transition duration-300 origin-left transform rotate-0"></div>
-            <div id="menu-down" class="bg-accent h-[2px] w-7 transition duration-300 origin-left transform rotate-0"></div>
+    <button
+        id="menu-button"
+        title="Abrir menú"
+        class="bg-background py-4 md:hidden flex justify-center w-full border border-black border-opacity-25 group fixed z-30 top-0 left-0 shadow"
+    >
+        <div
+            class="flex flex-col justify-between w-[20px] h-[20px] overflow-hidden"
+        >
+            <span
+                id="menu-up"
+                class="bg-accent h-[2px] w-7 transition duration-300 origin-left transform rotate-0"
+            />
+            <span
+                id="menu-down"
+                class="bg-accent h-[2px] w-7 transition duration-300 origin-left transform rotate-0"
+            />
         </div>
     </button>
-    <div id="menu" class="md:hidden min-h-svh grid items-center w-full fixed z-20 top-0 left-0 bg-background overflow-hidden transition ease-in duration-300 transform -translate-y-full">
-        <nav class="flex flex-col items-center justify-between gap-10 pt-8 my-auto w-full">
-            {
-                menuItems.map((item) => <NavbarItem menuItem={item} />)
-            }
+    <div
+        id="menu"
+        class="md:hidden min-h-svh grid items-center w-full fixed z-20 top-0 left-0 bg-background overflow-hidden transition ease-in duration-300 transform -translate-y-full"
+    >
+        <nav
+            class="flex flex-col items-center justify-between gap-10 pt-8 my-auto w-full"
+        >
+            {menuItems.map((item) => <NavbarItem menuItem={item} />)}
             <div class="md:hidden flex flex-row justify-evenly w-1/2 p-2">
                 <a href={linkedin} title="Linkedin">
                     <LinkedinIcon class="size-8 fill-primary hover:scale-125 transition duration-300 ease-in z-20" />
@@ -29,21 +45,21 @@ import LinkedinIcon from "./icons/Linkedin.astro";
 </div>
 
 <script>
-    const menuButton = document.getElementById("menu-button")
-    const menu = document.getElementById("menu")
-    const menuUp = document.getElementById("menu-up")
-    const menuDown = document.getElementById("menu-down")
+    const menuButton = document.getElementById("menu-button");
+    const menu = document.getElementById("menu");
+    const menuUp = document.getElementById("menu-up");
+    const menuDown = document.getElementById("menu-down");
 
     const clickMenuButton = (): void => {
-        menu?.classList.toggle("-translate-y-100")
-        menu?.classList.toggle("translate-y-0")
+        menu?.classList.toggle("-translate-y-100");
+        menu?.classList.toggle("translate-y-0");
 
-        menuUp?.classList.toggle("rotate-0")
-        menuUp?.classList.toggle("rotate-[42deg]")
+        menuUp?.classList.toggle("rotate-0");
+        menuUp?.classList.toggle("rotate-[42deg]");
 
-        menuDown?.classList.toggle("rotate-0")
-        menuDown?.classList.toggle("-rotate-[42deg]")
-    }
+        menuDown?.classList.toggle("rotate-0");
+        menuDown?.classList.toggle("-rotate-[42deg]");
+    };
 
-    menuButton?.addEventListener("click", clickMenuButton)
+    menuButton?.addEventListener("click", clickMenuButton);
 </script>

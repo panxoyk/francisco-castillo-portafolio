@@ -2,10 +2,10 @@
 import "../styles/globals.css";
 
 type Props = {
-    title: string,
-}
+    title: string;
+};
 
-const { title } = Astro.props
+const { title } = Astro.props;
 ---
 
 <html lang="es">
@@ -15,21 +15,24 @@ const { title } = Astro.props
         <meta name="generator" content={Astro.generator} />
         <title> {title} </title>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@300;400;600;700;800&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body id="body">
         <slot />
         <script>
-            const body = document.getElementById("body")
-            const menuButton = document.getElementById("menu-button")
+            const body = document.getElementById("body");
+            const menuButton = document.getElementById("menu-button");
 
             const clickMenuButton = (): void => {
-                body?.classList.toggle("overflow-hidden")
-            }
+                body?.classList.toggle("overflow-hidden");
+            };
 
-            menuButton?.addEventListener("click", clickMenuButton)
+            menuButton?.addEventListener("click", clickMenuButton);
         </script>
     </body>
 </html>

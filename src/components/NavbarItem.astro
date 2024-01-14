@@ -2,15 +2,15 @@
 import type { MenuItem } from "../types";
 
 type Props = {
-    menuItem: MenuItem,
-}
+    menuItem: MenuItem;
+};
 
-const { menuItem } = Astro.props
+const { menuItem } = Astro.props;
 ---
 
 <a
-class="uppercase p-2 pb-0 font-semibold tracking-wide text-primary text-base w-fit text-center transition duration-300 hover:text-accent"
-href={menuItem.path}
+    class="uppercase p-2 pb-0 font-semibold tracking-wide text-primary text-base w-fit text-center transition duration-300 hover:text-accent"
+    href={menuItem.path}
 >
     {menuItem.name}
 </a>

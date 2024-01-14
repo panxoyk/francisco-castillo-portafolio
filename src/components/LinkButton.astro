@@ -1,17 +1,16 @@
 ---
 type Props = {
-    label: string,
-    href?: string,
-}
+    label: string;
+    href?: string;
+};
 
-const { label, href } = Astro.props
+const { label, href } = Astro.props;
 ---
 
 <a
-href={href}
-class="
-    cursor-pointer font-semibold relative z-10 border border-black border-opacity-50 bg-accent text-white px-6 py-3
-    rounded-full w-full sm:w-fit text-center hover:brightness-125 transition ease-in duration-300
-">
+    href={href}
+    class="w-full sm:w-fit px-6 py-3 font-semibold text-center text-white bg-accent relative z-10
+    border border-black border-opacity-50 rounded-full hover:brightness-125 transition ease-in duration-300 cursor-pointer"
+>
     {label}
 </a>

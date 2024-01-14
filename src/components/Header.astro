@@ -1,5 +1,5 @@
 ---
-import { email, github, linkedin, menuItems } from "../data";
+import { github, linkedin, menuItems } from "../data";
 
 import Container from "./Container.astro";
 import CopyEmail from "./CopyEmail.tsx";
@@ -11,34 +11,41 @@ import LinkedinIcon from "./icons/Linkedin.astro";
 import MobileMenu from "./MobileMenu.astro";
 ---
 
-
 <header id="home">
     <MobileMenu />
     <Container>
         <div class="py-8 hidden md:flex flex-row items-center justify-between">
-            <nav class="flex flex-row items-center justify-between gap-4 h-3/5 my-auto w-full">
-                {
-                    menuItems.map((item) => <NavbarItem menuItem={item} />)
-                }
+            <nav
+                class="flex flex-row items-center justify-between gap-4 h-3/5 my-auto w-full"
+            >
+                {menuItems.map((item) => <NavbarItem menuItem={item} />)}
             </nav>
         </div>
         <section class="py-36 min-h-screen">
-            <div class="py-4 flex flex-row items-center w-full gap-4 justify-center md:justify-start">
+            <div
+                class="py-4 flex flex-row items-center w-full gap-4 justify-center md:justify-start"
+            >
                 <CopyEmail client:load />
-                <a href={github} class="hidden md:flex" title="Github">
+                <a href={github} title="Github" class="hidden md:flex">
                     <GithubIcon class="size-8 fill-black hover:scale-125 transition duration-300 ease-in" />
                 </a>
-                <a href={linkedin} class="hidden md:flex" title="Linkedin">
+                <a href={linkedin} title="Linkedin" class="hidden md:flex">
                     <LinkedinIcon class="size-8 fill-[#0A66C2] hover:scale-125 transition duration-300 ease-in" />
                 </a>
             </div>
-            <h1 class="py-4 text-5xl se:text-6xl min-[460px]:text-7xl sm:text-8xl font-extrabold text-primary text-center md:text-left text-balance">
+            <h1
+                class="py-4 text-5xl se:text-6xl min-[460px]:text-7xl sm:text-8xl font-extrabold text-primary text-center md:text-left text-balance"
+            >
                 Francisco Castillo H.
             </h1>
-            <p class="gap-1 font-bold text-lg md:text-2xl pb-4 text-primary text-center md:text-start font-jetbrains text-pretty se:text-nowrap">
-                <span class="text-accent"> &lt;</span>Desarrollador web full-stack<span class="text-accent ml-2">/&gt;</span>
+            <p
+                class="gap-1 font-bold text-lg md:text-2xl pb-4 text-center md:text-start text-accent text-opacity-80 font-jetbrains text-pretty se:text-nowrap"
+            >
+                &lt;<span class="text-opacity-80 text-primary">Desarrollador web full-stack</span><span class="ml-2" />/&gt;
             </p>
-            <div class="flex flex-row justify-center md:justify-start items-center my-4">
+            <div
+                class="flex flex-row justify-center md:justify-start items-center my-4"
+            >
                 <LinkButton label="Descargar CV" href="cv_2024_FranciscoCastillo.pdf" />
             </div>
         </section>
