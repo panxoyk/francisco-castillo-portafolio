@@ -22,11 +22,11 @@ import LinkedinIcon from "./icons/Linkedin.astro";
                     {menuItems.map((item) => <NavbarItem menuItem={item} />)}
                 </div>
                 <div class="flex flex-row gap-4 items-center justify-between">
-                    <a href={github} title="Github" class="hidden md:flex">
-                        <GithubIcon class="size-6 fill-primary hover:scale-125 transition duration-300 ease-in" />
+                    <a href={github} title="Ver perfil de Github" class="hidden md:flex hover:scale-125 transition duration-300 ease-in">
+                        <GithubIcon class="size-6 fill-primary" />
                     </a>
-                    <a href={linkedin} title="Linkedin" class="hidden md:flex">
-                        <LinkedinIcon class="size-6 fill-primary hover:scale-125 transition duration-300 ease-in" />
+                    <a href={linkedin} title="Ver perfil de Linkedin" class="hidden md:flex hover:scale-125 transition duration-300 ease-in">
+                        <LinkedinIcon class="size-6 fill-primary" />
                     </a>
                 </div>
             </nav>
@@ -59,11 +59,11 @@ import LinkedinIcon from "./icons/Linkedin.astro";
         >
             {menuItems.map((item) => <NavbarItem menuItem={item} />)}
             <div class="flex flex-row items-center gap-8 p-2">
-                <a href={linkedin} title="Linkedin">
-                    <LinkedinIcon class="size-6 fill-primary hover:scale-125 transition duration-300 ease-in z-20" />
+                <a href={linkedin} title="Ver perfil de Linkedin" class="hover:scale-125 transition duration-300 ease-in z-20">
+                    <LinkedinIcon class="size-6 fill-primary" />
                 </a>
-                <a href={github} title="Github">
-                    <GithubIcon class="size-6 fill-primary hover:scale-125 transition duration-300 ease-in z-20" />
+                <a href={github} title="Ver perfil de Github" class="hover:scale-125 transition duration-300 ease-in z-20">
+                    <GithubIcon class="size-6 fill-primary" />
                 </a>
             </div>
         </nav>
@@ -71,14 +71,18 @@ import LinkedinIcon from "./icons/Linkedin.astro";
 </div>
 
 <script>
+    const body = document.getElementById("body")
     const menuButton = document.getElementById("menu-button");
     const menu = document.getElementById("menu");
     const menuUp = document.getElementById("menu-up");
     const menuDown = document.getElementById("menu-down");
 
-    const clickMenuButton = (): void => {
-        menu?.classList.toggle("translate-x-100");
-        menu?.classList.toggle("translate-x-0");
+    const navMobile = menu?.querySelector("nav");
+    const navLinks = navMobile?.querySelectorAll(".NAV-LINK");
+
+    const toggleMenu = (): void => {
+        body?.classList.toggle("overflow-hidden");
+        menu?.classList.toggle("transform-none");
 
         menuUp?.classList.toggle("rotate-0");
         menuUp?.classList.toggle("rotate-[42deg]");
@@ -87,5 +91,8 @@ import LinkedinIcon from "./icons/Linkedin.astro";
         menuDown?.classList.toggle("-rotate-[42deg]");
     };
 
-    menuButton?.addEventListener("click", clickMenuButton);
+    menuButton?.addEventListener("click", toggleMenu);
+    navLinks?.forEach((navLink): void => {
+        navLink.addEventListener("click", toggleMenu);
+    });
 </script>

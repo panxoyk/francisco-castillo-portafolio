@@ -5,14 +5,14 @@ import NavBar from "./NavBar.astro";
 import Mail from "./icons/Mail.astro";
 ---
 
-<header id="home">
+<header>
     <NavBar />
     <Container>
-        <div class="mt-48 py-8">
+        <section id="home" class="pt-48 pb-8">
             <p
                 id="send-email"
                 class="gap-2 flex flex-row items-center mx-auto md:mx-0 font-semibold text-sm md:text-base py-2 text-black
-                opacity-50 text-pretty se:text-nowrap hover:opacity-100 transition ease-in duration-300 cursor-pointer w-fit hover:text-accent"
+                opacity-50 text-pretty se:text-nowrap hover:opacity-100 hover:text-accent transition ease-in duration-300 cursor-pointer w-fit"
             >
                 <Mail class="size-6" /> francisco.cstllhrnndz@gmail.com
             </p>
@@ -26,7 +26,7 @@ import Mail from "./icons/Mail.astro";
             >
                 <LinkButton label="Descargar CV" href="cv_2024_FranciscoCastillo.pdf" />
             </div>
-        </div>
+        </section>
     </Container>
 </header>
 
@@ -35,7 +35,7 @@ import Mail from "./icons/Mail.astro";
 
     const emailButton = document.getElementById("send-email");
 
-    const sendEmail = () => {
+    const sendEmail = (): void => {
         window.location.href = `mailto:${email}`;
     };
 
