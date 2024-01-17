@@ -2,7 +2,7 @@
 
 @layer base {
     body {
-        @apply bg-background font-inter;
+        @apply bg-background font-inter tracking-tight;
     }
 }
 

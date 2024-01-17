@@ -18,7 +18,6 @@ export default {
 			},
 			fontFamily: {
 				inter: ["Inter", "sans-serif"],
-				jetbrains: ["JetBrains Mono", "monospace"],
 			},
 			screens: {
 				"se": "370px",

@@ -2,31 +2,17 @@
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
 import Header from "../components/Header.astro";
-import MapPin from "../components/icons/MapPin.astro";
+import About from "../components/About.astro";
+import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
 ---
 
 <Layout title="Inicio">
     <Header />
     <Container>
-        <section id="about" class="py-32">
-            <h1> Sobre mí </h1>
-            <p
-                class="flex-row items-center justify-center md:justify-start gap-1 font-bold text-xl py-4 text-accent"
-            >
-                <MapPin class="size-5 fill-accent" /> Santiago, Chile.
-            </p>
-            <p class="text-center md:text-left font-semibold text-primary my-4">
-                Hola, soy Francisco Castillo Hernández y me apasiona el
-                desarrollo web. En mi tiempo libre, me dedico a crear
-                aplicaciones web usando TypeScript, React y Node.js.
-            </p>
-        </section>
-        <section id="projects" class="py-32">
-            <h1> Proyectos </h1>
-        </section>
-        <section id="contact" class="py-32">
-            <h1> Contacto </h1>
-        </section>
+        <About />
+        <Projects />
+        <Contact />
     </Container>
     <footer class="bg-primary h-1/5 w-full text-background"> HOLA </footer>
 </Layout>

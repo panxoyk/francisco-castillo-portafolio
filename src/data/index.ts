@@ -3,19 +3,19 @@ import type { MenuItem } from "../types";
 export const menuItems: MenuItem[] = [
     {
         name: "Inicio",
-        path: "#home",
+        path: "/#home",
     },
     {
         name: "Sobre mí",
-        path: "#about",
+        path: "/#about",
     },
     {
         name: "Proyectos",
-        path: "#projects",
+        path: "/#projects",
     },
     {
         name: "Contacto",
-        path: "#contact",
+        path: "/#contact",
     },
 ];
 

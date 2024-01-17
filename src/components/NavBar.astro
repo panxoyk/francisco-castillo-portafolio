@@ -1,0 +1,85 @@
+---
+import { menuItems, linkedin, github } from "../data";
+import NavbarItem from "./NavbarItem.astro";
+import GithubIcon from "./icons/Github.astro";
+import LinkedinIcon from "./icons/Linkedin.astro";
+---
+
+<div class="relative">
+    <div class="py-4 bg-background border-b border-black fixed top-0 z-30 w-full">
+        <div class="flex mx-4 md:mx-16 flex-row items-center justify-between gap-16">
+            <a href="/" class="font-semibold text-xl text-primary"> Francisco Castillo </a>
+            <nav
+                class="hidden lg:flex flex-row items-center justify-end gap-8"
+            >
+                <div class="flex flex-row items-center justify-between gap-4 pr-8 border-r-2 border-primary w-full">
+                    {menuItems.map((item) => <NavbarItem menuItem={item} />)}
+                </div>
+                <div class="flex flex-row gap-4 items-center justify-between">
+                    <a href={github} title="Github" class="hidden md:flex">
+                        <GithubIcon class="size-6 fill-primary hover:scale-125 transition duration-300 ease-in" />
+                    </a>
+                    <a href={linkedin} title="Linkedin" class="hidden md:flex">
+                        <LinkedinIcon class="size-6 fill-primary hover:scale-125 transition duration-300 ease-in" />
+                    </a>
+                </div>
+            </nav>
+            <button
+                id="menu-button"
+                title="Abrir menú"
+                class="bg-background p-4 lg:hidden flex justify-center group z-30"
+            >
+                <div
+                    class="flex flex-col justify-between w-[20px] h-[20px] overflow-hidden"
+                >
+                    <span
+                        id="menu-up"
+                        class="bg-accent h-[2px] w-7 transition duration-300 origin-left transform rotate-0"
+                    />
+                    <span
+                        id="menu-down"
+                        class="bg-accent h-[2px] w-7 transition duration-300 origin-left transform rotate-0"
+                    />
+                </div>
+            </button>
+        </div>
+    </div>
+    <div
+        id="menu"
+        class="min-h-svh lg:hidden grid items-center w-full fixed z-20 top-0 left-0 bg-background overflow-hidden transition ease-in duration-300 transform translate-x-full"
+    >
+        <nav
+            class="flex flex-col items-center justify-between gap-10 pt-8 my-auto w-full"
+        >
+            {menuItems.map((item) => <NavbarItem menuItem={item} />)}
+            <div class="flex flex-row items-center gap-8 p-2">
+                <a href={linkedin} title="Linkedin">
+                    <LinkedinIcon class="size-6 fill-primary hover:scale-125 transition duration-300 ease-in z-20" />
+                </a>
+                <a href={github} title="Github">
+                    <GithubIcon class="size-6 fill-primary hover:scale-125 transition duration-300 ease-in z-20" />
+                </a>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<script>
+    const menuButton = document.getElementById("menu-button");
+    const menu = document.getElementById("menu");
+    const menuUp = document.getElementById("menu-up");
+    const menuDown = document.getElementById("menu-down");
+
+    const clickMenuButton = (): void => {
+        menu?.classList.toggle("translate-x-100");
+        menu?.classList.toggle("-translate-x-0");
+
+        menuUp?.classList.toggle("rotate-0");
+        menuUp?.classList.toggle("rotate-[42deg]");
+
+        menuDown?.classList.toggle("rotate-0");
+        menuDown?.classList.toggle("-rotate-[42deg]");
+    };
+
+    menuButton?.addEventListener("click", clickMenuButton);
+</script>
