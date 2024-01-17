@@ -56,3 +56,4 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 ## To-Do
 
 - Imagen animada en el header (foto de perfil, diseño random, dibujo animado, ...etc)
+- Funcionalidad a botones de navbar en mobile (cerrar menu y dirigir a la seccion)
