@@ -34,10 +34,12 @@ import Mail from "./icons/Mail.astro";
     import { email } from "../data";
 
     const emailButton = document.getElementById("send-email");
+    const emailFooter = document.getElementById("send-email-footer");
 
     const sendEmail = (): void => {
         window.location.href = `mailto:${email}`;
     };
 
     emailButton?.addEventListener("click", sendEmail);
+    emailFooter?.addEventListener("click", sendEmail);
 </script>

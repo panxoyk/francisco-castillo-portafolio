@@ -1,7 +1,37 @@
 ---
+import Container from "./Container.astro";
+
 
 ---
 
-<footer class="bg-primary p-8 w-full text-light text-center text-base">
-    © Copyright 2024 - Francisco Castillo
+<footer class="bg-light w-full border-t border-black">
+    <Container>
+        <div class="py-4 lg:py-8 w-full text-primary text-sm flex flex-col lg:flex-row justify-between items-start gap-8 lg:items-center">
+            <div class="flex flex-col items-start gap-1">
+                <p class="text-base font-semibold text-accent">
+                    Francisco Castillo
+                </p>
+                <p>
+                    Desarrollador web full-stack
+                </p>
+                <div>
+                    <a class="text-primary font-semibold transition duration-300 hover:text-accent cursor-pointer">
+                        Descargar CV
+                    </a>
+                    <span>|</span>
+                    <a id="send-email-footer" class="text-primary font-semibold transition duration-300 hover:text-accent cursor-pointer">
+                        Envíar mail
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col items-start lg:items-end gap-1">
+                <p>
+                    Construido en Astro, <a class="font-semibold text-primary transition duration-300 hover:text-accent cursor-pointer">código fuente</a>
+                </p>
+                <p>
+                    Actualizado el 2024
+                </p>
+            </div>
+        </div>
+    </Container>
 </footer>
