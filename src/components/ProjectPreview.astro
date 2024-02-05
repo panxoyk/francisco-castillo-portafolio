@@ -1,0 +1,29 @@
+---
+import type { Project } from "../types";
+
+type Props = {
+    project: Project;
+};
+
+const { project } = Astro.props;
+---
+
+<div
+    class="shadow border border-black rounded-lg overflow-hidden cursor-pointer"
+>
+    <div class="relative h-64 group">
+        <img
+            src={project.img}
+            alt="bg"
+            class="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <div
+            class="flex flex-col justify-center items-center gap-2 w-full h-full absolute inset-0 bg-black/50 backdrop-blur-sm opacity-0 transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
+        >
+            <h3 class="font-bold text-xl text-accent uppercase transition translate-y-full duration-300 group-hover:translate-y-0 group-focus-visible:-translate-y-0">
+                {project.name}
+            </h3>
+            <p class="text-white text-sm"> {project.category} </p>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import type { MenuItem } from "../types";
+import type { MenuItem, Project } from "../types";
 
 export const menuItems: MenuItem[] = [
     {
@@ -16,6 +16,24 @@ export const menuItems: MenuItem[] = [
     {
         name: "Contacto",
         path: "/#contact",
+    },
+];
+
+export const projects: Project[] = [
+    {
+        name: "Proyecto 1",
+        img: "proyecto1.jpeg",
+        category: "Categoría",
+    },
+    {
+        name: "Proyecto 2",
+        img: "proyecto2.jpeg",
+        category: "Categoría",
+    },
+    {
+        name: "Proyecto 3",
+        img: "proyecto3.jpeg",
+        category: "Categoría",
     },
 ];
 
