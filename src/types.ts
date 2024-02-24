@@ -7,4 +7,5 @@ export type Project = {
     name: string,
     img: string,
     category: string,
+    date: string,
 };

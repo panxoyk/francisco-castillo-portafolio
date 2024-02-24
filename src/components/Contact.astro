@@ -1,7 +1,22 @@
 ---
 import Container from "./Container.astro";
+import Mail from "./icons/Mail.astro";
+import ContactForm from "./react/ContactForm.tsx";
 ---
 
 <section id="contact" class="pt-36 pb-8">
-    <Container></Container>
+    <Container>
+        <div>
+            <ContactForm client:only="react" />
+        </div>
+        <div>
+            <p
+                id="send-email"
+                class="gap-2 flex flex-row items-center mx-auto md:mx-0 font-semibold text-sm md:text-base py-2 text-black
+                opacity-50 text-pretty se:text-nowrap hover:opacity-100 hover:text-accent transition ease-in duration-300 cursor-pointer w-fit"
+            >
+                <Mail class="size-6" /> francisco.cstllhrnndz@gmail.com
+            </p>
+        </div>
+    </Container>
 </section>
