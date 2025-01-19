@@ -1,4 +1,4 @@
-export type MenuItem = {
+export type Section = {
     name: string,
     path: string,
 };

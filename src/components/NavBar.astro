@@ -1,8 +1,12 @@
 ---
-import { menuItems, linkedin, github } from "../data";
+// COMPONENTS
 import NavbarItem from "./NavbarItem.astro";
 import GithubIcon from "./icons/Github.astro";
 import LinkedinIcon from "./icons/Linkedin.astro";
+
+// DATA
+import { sections } from "../data/sections";
+import { linkedin, github } from "../data/socials";
 ---
 
 <div class="relative">
@@ -19,7 +23,7 @@ import LinkedinIcon from "./icons/Linkedin.astro";
                 <div
                     class="flex flex-row items-center justify-between gap-4 pr-8 border-r-2 border-primary w-full"
                 >
-                    {menuItems.map((item) => <NavbarItem menuItem={item} />)}
+                    {sections.map((section) => <NavbarItem section={section} />)}
                 </div>
                 <div class="flex flex-row gap-4 items-center justify-between">
                     <a href={github} title="Ver perfil de Github" class="hidden md:flex hover:scale-125 transition duration-300 ease-in">
@@ -57,7 +61,7 @@ import LinkedinIcon from "./icons/Linkedin.astro";
         <nav
             class="flex flex-col items-center justify-between gap-10 pt-8 my-auto w-full"
         >
-            {menuItems.map((item) => <NavbarItem menuItem={item} />)}
+            {sections.map((section) => <NavbarItem section={section} />)}
             <div class="flex flex-row items-center gap-8 p-2">
                 <a href={linkedin} title="Ver perfil de Linkedin" class="hover:scale-125 transition duration-300 ease-in z-20">
                     <LinkedinIcon class="size-6 fill-primary" />

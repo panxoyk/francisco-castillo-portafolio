@@ -1,8 +1,12 @@
 ---
+// COMPONENTS
 import Container from "./Container.astro";
 import LinkButton from "./LinkButton.astro";
 import NavBar from "./NavBar.astro";
 import Mail from "./icons/Mail.astro";
+
+// DATA
+import { email } from "../data/socials";
 ---
 
 <header>
@@ -14,7 +18,7 @@ import Mail from "./icons/Mail.astro";
                 class="gap-2 flex flex-row items-center mx-auto md:mx-0 font-semibold text-sm md:text-base py-2 text-black
                 opacity-50 text-pretty se:text-nowrap hover:opacity-100 hover:text-accent transition ease-in duration-300 cursor-pointer w-fit"
             >
-                <Mail class="size-6" /> francisco.cstllhrnndz@gmail.com
+                <Mail class="size-6" /> {email}
             </p>
             <h1
                 class="py-4 text-4xl se:text-5xl sm:text-7xl lg:text-8xl font-extrabold text-primary text-center md:text-left text-balance"
@@ -31,7 +35,7 @@ import Mail from "./icons/Mail.astro";
 </header>
 
 <script>
-    import { email } from "../data";
+    import { email } from "../data/socials";
 
     const emailButton = document.getElementById("send-email");
     const emailFooter = document.getElementById("send-email-footer");

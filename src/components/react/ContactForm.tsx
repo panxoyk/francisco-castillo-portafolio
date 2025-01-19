@@ -1,4 +1,7 @@
+// TYPES
 import type { ReactElement } from "react";
+
+// LIBRARIES
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -7,9 +10,9 @@ const schema = z.object({
     name: z.string().min(1, "El nombre no puede estar vacío"),
     email: z.string().email("Correo electrónico no válido"),
     message: z.string().min(1, "El mensaje no puede estar vacío")
-})
+});
 
-type FormData = z.infer<typeof schema>
+type FormData = z.infer<typeof schema>;
 
 const ContactForm = (): ReactElement => {
     const {
@@ -24,12 +27,11 @@ const ContactForm = (): ReactElement => {
             message: ''
         },
         resolver: zodResolver(schema)
-    })
+    });
 
     const onSubmit = (data: FormData): void => {
-        console.log(data)
-        reset()
-    }
+        reset();
+    };
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -50,7 +52,7 @@ const ContactForm = (): ReactElement => {
             </div>
             <input type="submit" />
         </form>
-    )
-}
+    );
+};
 
-export default ContactForm
+export default ContactForm;
