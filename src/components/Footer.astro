@@ -1,6 +1,9 @@
 ---
 // COMPONENTS
 import Container from "./Container.astro";
+
+// DATA
+import { repository } from "../data/socials";
 ---
 
 <footer class="bg-light w-full border-t border-black">
@@ -14,18 +17,18 @@ import Container from "./Container.astro";
                     Desarrollador web full-stack
                 </p>
                 <div>
-                    <a class="text-primary font-semibold transition duration-300 hover:text-accent cursor-pointer">
+                    <a class="text-primary font-semibold transition duration-300 hover:text-accent cursor-pointer" href="CV.pdf">
                         Descargar CV
                     </a>
                     <span>|</span>
-                    <a id="send-email-footer" class="text-primary font-semibold transition duration-300 hover:text-accent cursor-pointer">
+                    <span id="send-email-footer" class="text-primary font-semibold transition duration-300 hover:text-accent cursor-pointer">
                         Enviar correo electrónico
-                    </a>
+                    </span>
                 </div>
             </div>
             <div class="flex flex-col items-start lg:items-end gap-1">
                 <p>
-                    Construido en Astro, <a class="font-semibold text-primary transition duration-300 hover:text-accent cursor-pointer"> código fuente </a>
+                    Construido en Astro, <a class="font-semibold text-primary transition duration-300 hover:text-accent cursor-pointer" aria-label="Ver código fuente" href={repository}> código fuente </a>
                 </p>
                 <p>
                     Actualizado el 2025

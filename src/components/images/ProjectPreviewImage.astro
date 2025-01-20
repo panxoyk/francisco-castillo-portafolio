@@ -1,0 +1,22 @@
+---
+// COMPONENTS
+import { Image } from 'astro:assets';
+
+type Props = {
+    src: string;
+    alt: string;
+};
+
+const { src, alt } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+const imageSrc = await images[`/src/assets/${src}`]();
+---
+
+<Image
+    {...Astro.props}
+    class="absolute inset-0 h-full w-full object-cover object-center"
+    src={imageSrc.default}
+    alt={alt}
+    loading="lazy"
+/>

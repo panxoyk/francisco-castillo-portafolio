@@ -1,26 +1,21 @@
 ---
 // COMPONENTS
-import MapPin from "./icons/MapPin.astro";
+import MapPinIcon from "./icons/MapPinIcon.astro";
 import Container from "./Container.astro";
+import ProfileImage from "./images/ProfileImage.astro";
 ---
 
 <section id="about" class="pt-36 pb-8">
     <Container>
         <div class="flex flex-col sm:grid sm:grid-cols-3 gap-8">
             <picture class="col-span-1 flex flex-row items-center justify-start w-full">
-                <img
-                    src="profile_francisco_castillo.jpeg"
-                    width="256px"
-                    height="256px"
-                    alt="Foto de perfil Francisco Castillo"
-                    class="rounded-lg border border-black"
-                />
+                <ProfileImage />
             </picture>
             <div class="flex flex-col items-center justify-center gap-4 col-span-2">
                 <p
                     class="flex flex-row items-center justify-start gap-1 font-semibold md:text-lg w-full text-nowrap"
                 >
-                    <MapPin class="size-6 fill-accent" /> Santiago, Chile
+                    <MapPinIcon class="size-6 fill-accent" /> Santiago, Chile
                 </p>
                 <p class="text-left text-primary text-balance text-base lg:text-lg">
                     Hola, soy Francisco Castillo Hernández y me apasiona el desarrollo web.

@@ -1,6 +1,7 @@
 ---
 // TYPES
 import type { Project } from "../types";
+import ProjectPreviewImage from "./images/ProjectPreviewImage.astro";
 
 type Props = {
     project: Project;
@@ -13,10 +14,14 @@ const { project } = Astro.props;
     class="shadow border border-black rounded-lg overflow-hidden cursor-pointer"
 >
     <div class="relative h-64 group">
+        <ProjectPreviewImage
+            src={project.img.path}
+            alt={project.img.alt}
+        />
         <img
-            src={project.img}
-            alt="bg"
             class="absolute inset-0 h-full w-full object-cover object-center"
+            alt=""
+            loading="lazy"
         />
         <div
             class="flex flex-col justify-center items-center gap-2 w-full h-full absolute inset-0 bg-black/50 backdrop-blur-sm opacity-0 transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"

@@ -3,7 +3,7 @@
 import Container from "./Container.astro";
 import LinkButton from "./LinkButton.astro";
 import NavBar from "./NavBar.astro";
-import Mail from "./icons/Mail.astro";
+import MailIcon from "./icons/MailIcon.astro";
 
 // DATA
 import { email } from "../data/socials";
@@ -18,7 +18,7 @@ import { email } from "../data/socials";
                 class="gap-2 flex flex-row items-center mx-auto md:mx-0 font-semibold text-sm md:text-base py-2 text-black
                 opacity-50 text-pretty se:text-nowrap hover:opacity-100 hover:text-accent transition ease-in duration-300 cursor-pointer w-fit"
             >
-                <Mail class="size-6" /> {email}
+                <MailIcon class="size-6" /> {email}
             </p>
             <h1
                 class="py-4 text-4xl se:text-5xl sm:text-7xl lg:text-8xl font-extrabold text-primary text-center md:text-left text-balance"
@@ -28,7 +28,7 @@ import { email } from "../data/socials";
             <div
                 class="flex flex-col md:flex-row justify-center md:justify-start items-center my-4 gap-8"
             >
-                <LinkButton label="Descargar CV" href="cv_2024_FranciscoCastillo.pdf" />
+                <LinkButton label="Descargar CV" href="CV.pdf" />
             </div>
         </section>
     </Container>

@@ -3,19 +3,28 @@ import type { Project } from "../types";
 export const projects: Project[] = [
     {
         name: "Proyecto 1",
-        img: "proyecto1.jpeg",
+        img: {
+            path: "proyecto1.jpeg",
+            alt: "Proyecto 1",
+        },
         category: "Categoría",
         date: "Mes, 2024",
     },
     {
         name: "Proyecto 2",
-        img: "proyecto2.jpeg",
+        img: {
+            path: "proyecto2.jpeg",
+            alt: "Proyecto 2",
+        },
         category: "Categoría",
         date: "Mes, 2024"
     },
     {
         name: "Proyecto 3",
-        img: "proyecto3.jpeg",
+        img: {
+            path: "proyecto3.jpeg",
+            alt: "Proyecto 3",
+        },
         category: "Categoría",
         date: "Mes, 2024",
     },
