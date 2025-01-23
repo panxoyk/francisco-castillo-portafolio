@@ -10,9 +10,7 @@ import { linkedin, github } from "../data/socials";
 ---
 
 <div class="relative">
-    <div
-        class="py-4 bg-light border-b border-black fixed top-0 z-30 w-full"
-    >
+    <div class="py-4 bg-light border-b border-black fixed top-0 z-30 w-full">
         <div
             class="flex mx-4 md:mx-16 flex-row items-center justify-between gap-16"
         >
@@ -23,13 +21,25 @@ import { linkedin, github } from "../data/socials";
                 <div
                     class="flex flex-row items-center justify-between gap-4 pr-8 border-r-2 border-primary w-full"
                 >
-                    {sections.map((section) => <NavbarItem section={section} />)}
+                    {
+                        sections.map((section) => (
+                            <NavbarItem section={section} />
+                        ))
+                    }
                 </div>
                 <div class="flex flex-row gap-4 items-center justify-between">
-                    <a href={github} class="hidden md:flex hover:scale-125 transition duration-300 ease-in" aria-label="Ver perfil de Github">
+                    <a
+                        href={github}
+                        class="hidden md:flex hover:scale-125 transition duration-300 ease-in"
+                        aria-label="Ver perfil de Github"
+                    >
                         <GithubIcon class="size-6 fill-primary" />
                     </a>
-                    <a href={linkedin} class="hidden md:flex hover:scale-125 transition duration-300 ease-in" aria-label="Ver perfil de LinkedIn">
+                    <a
+                        href={linkedin}
+                        class="hidden md:flex hover:scale-125 transition duration-300 ease-in"
+                        aria-label="Ver perfil de LinkedIn"
+                    >
                         <LinkedinIcon class="size-6 fill-primary" />
                     </a>
                 </div>
@@ -45,11 +55,11 @@ import { linkedin, github } from "../data/socials";
                     <span
                         id="menu-up"
                         class="bg-accent h-[2px] w-7 transition duration-300 origin-left transform rotate-0"
-                    />
+                    ></span>
                     <span
                         id="menu-down"
                         class="bg-accent h-[2px] w-7 transition duration-300 origin-left transform rotate-0"
-                    />
+                    ></span>
                 </div>
             </button>
         </div>
@@ -63,10 +73,18 @@ import { linkedin, github } from "../data/socials";
         >
             {sections.map((section) => <NavbarItem section={section} />)}
             <div class="flex flex-row items-center gap-8 p-2">
-                <a href={linkedin} class="hover:scale-125 transition duration-300 ease-in z-20" aria-label="Ver perfil de LinkedIn">
+                <a
+                    href={linkedin}
+                    class="hover:scale-125 transition duration-300 ease-in z-20"
+                    aria-label="Ver perfil de LinkedIn"
+                >
                     <LinkedinIcon class="size-6 fill-primary" />
                 </a>
-                <a href={github} class="hover:scale-125 transition duration-300 ease-in z-20" aria-label="Ver perfil de Github">
+                <a
+                    href={github}
+                    class="hover:scale-125 transition duration-300 ease-in z-20"
+                    aria-label="Ver perfil de Github"
+                >
                     <GithubIcon class="size-6 fill-primary" />
                 </a>
             </div>
@@ -75,7 +93,7 @@ import { linkedin, github } from "../data/socials";
 </div>
 
 <script>
-    const body = document.getElementById("body")
+    const body = document.getElementById("body");
     const menuButton = document.getElementById("menu-button");
     const menu = document.getElementById("menu");
     const menuUp = document.getElementById("menu-up");
