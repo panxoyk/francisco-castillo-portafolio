@@ -13,8 +13,4 @@ export const sections: Section[] = [
         name: "Proyectos",
         path: "/#projects",
     },
-    {
-        name: "Contacto",
-        path: "/#contact",
-    },
 ];
