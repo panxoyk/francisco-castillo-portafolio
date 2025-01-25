@@ -6,19 +6,19 @@ import Container from "@components/Container.astro";
 import { repository } from "@data/socials";
 ---
 
-<footer class="bg-light w-full border-t border-black">
+<footer class="bg-white rounded-lg w-full border-t">
     <Container>
         <div
             class="py-4 lg:py-8 w-full text-primary text-sm flex flex-col lg:flex-row justify-between items-start gap-8 lg:items-center"
         >
             <div class="flex flex-col items-start gap-1">
-                <p class="text-base font-semibold text-accent">
+                <p class="text-base font-semibold text-secondary">
                     Francisco Castillo
                 </p>
                 <p>Desarrollador web full-stack</p>
                 <div>
                     <a
-                        class="text-primary font-semibold transition duration-300 hover:text-accent cursor-pointer"
+                        class="text-primary font-semibold transition duration-300 hover:text-secondary cursor-pointer"
                         href="CV.pdf"
                     >
                         Descargar CV
@@ -26,7 +26,7 @@ import { repository } from "@data/socials";
                     <span>|</span>
                     <span
                         id="send-email-footer"
-                        class="text-primary font-semibold transition duration-300 hover:text-accent cursor-pointer"
+                        class="text-primary font-semibold transition duration-300 hover:text-secondary cursor-pointer"
                     >
                         Enviar correo electrónico
                     </span>

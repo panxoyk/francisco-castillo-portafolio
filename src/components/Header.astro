@@ -4,6 +4,7 @@ import Container from "@components/Container.astro";
 import LinkButton from "@components/LinkButton.astro";
 import NavBar from "@components/NavBar.astro";
 import MailIcon from "@components/icons/MailIcon.astro";
+import ProfileImage from "@components/images/ProfileImage.astro";
 
 // DATA
 import { email } from "@data/socials";
@@ -12,29 +13,40 @@ import { email } from "@data/socials";
 <header>
     <NavBar />
     <Container>
-        <section id="home" class="pt-48 pb-8">
-            <p
-                id="send-email"
-                class="gap-2 flex flex-row items-center mx-0 font-semibold text-sm md:text-base py-2 text-black
-                opacity-50 text-pretty se:text-nowrap hover:opacity-100 hover:text-accent transition ease-in duration-300 cursor-pointer w-fit"
+        <section id="home" class="pt-32 pb-8">
+            <div
+                class="flex flex-col-reverse md:flex-row md:justify-between md:items-center"
             >
-                <MailIcon class="size-6" />
-                {email}
-            </p>
-            <h1
-                class="py-4 text-4xl se:text-5xl sm:text-7xl lg:text-8xl font-extrabold text-primary text-left text-balance"
-            >
-                Desarrollador web full-stack
-            </h1>
-            <div class="flex justify-start my-4">
-                <LinkButton label="Descargar CV" href="CV.pdf" />
+                <div>
+                    <p
+                        id="send-email"
+                        class="gap-2 flex flex-row items-center mx-0 font-semibold text-base md:text-lg pt-8 text-primary
+                        opacity-50 text-pretty se:text-nowrap hover:opacity-100 transition ease-in duration-300 cursor-pointer w-fit"
+                    >
+                        <MailIcon class="size-6" />
+                        {email}
+                    </p>
+                    <h1
+                        class="py-4 text-6xl lg:text-7xl font-extrabold text-primary text-left text-pretty md:text-balance"
+                    >
+                        Francisco Castillo H.
+                    </h1>
+                    <div class="flex justify-start my-4">
+                        <LinkButton label="Descargar CV" href="CV.pdf" />
+                    </div>
+                </div>
+                <picture
+                    class="flex items-center justify-start md:justify-end w-full"
+                >
+                    <ProfileImage />
+                </picture>
             </div>
         </section>
     </Container>
 </header>
 
 <script>
-    import { email } from "../data/socials";
+    import { email } from "@data/socials";
 
     const emailButton = document.getElementById("send-email");
     const emailFooter = document.getElementById("send-email-footer");

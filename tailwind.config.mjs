@@ -8,12 +8,11 @@ export default {
 		},
 		extend: {
 			colors: {
-				"light": "#faf8fd",
-				// "dark": "",
+				"background": "#faf8fd",
 				"primary": "#2b333f",
-				// "secondary": "",
-				"accent": "#136df5",
-				// "muted": "",
+				"secondary": "#136df5",
+				"accent": "#eb322d",
+				"muted": "#e5e5e5",
 				"success": "#22d85e",
 				"danger": "#df3c48",
 				"black": "#050506",

@@ -10,11 +10,11 @@ import { linkedin, github } from "@data/socials";
 ---
 
 <div class="relative">
-    <div class="py-4 bg-light border-b border-black fixed top-0 z-30 w-full">
+    <div class="py-4 bg-white border-b fixed top-0 z-30 w-full">
         <div
             class="flex mx-4 md:mx-16 flex-row items-center justify-between gap-16"
         >
-            <a href="/" class="font-semibold text-xl text-primary">
+            <a href="/" class="font-semibold text-xl text-dark">
                 Francisco Castillo
             </a>
             <nav class="hidden lg:flex flex-row items-center justify-end gap-8">
@@ -33,14 +33,14 @@ import { linkedin, github } from "@data/socials";
                         class="hidden md:flex hover:scale-125 transition duration-300 ease-in"
                         aria-label="Ver perfil de Github"
                     >
-                        <GithubIcon class="size-6 fill-primary" />
+                        <GithubIcon class="size-8 fill-primary" />
                     </a>
                     <a
                         href={linkedin}
                         class="hidden md:flex hover:scale-125 transition duration-300 ease-in"
                         aria-label="Ver perfil de LinkedIn"
                     >
-                        <LinkedinIcon class="size-6 fill-primary" />
+                        <LinkedinIcon class="size-8 fill-primary" />
                     </a>
                 </div>
             </nav>
@@ -54,11 +54,11 @@ import { linkedin, github } from "@data/socials";
                 >
                     <span
                         id="menu-up"
-                        class="bg-accent h-[2px] w-7 transition duration-300 origin-left transform rotate-0"
+                        class="bg-primary h-[2px] w-7 transition duration-300 origin-left transform rotate-0"
                     ></span>
                     <span
                         id="menu-down"
-                        class="bg-accent h-[2px] w-7 transition duration-300 origin-left transform rotate-0"
+                        class="bg-primary h-[2px] w-7 transition duration-300 origin-left transform rotate-0"
                     ></span>
                 </div>
             </button>
@@ -66,7 +66,7 @@ import { linkedin, github } from "@data/socials";
     </div>
     <div
         id="menu"
-        class="min-h-svh lg:hidden grid items-center w-full fixed z-20 top-0 left-0 bg-light overflow-hidden transition ease-in duration-300 transform translate-x-full"
+        class="min-h-svh lg:hidden grid items-center w-full fixed z-20 top-0 left-0 bg-white overflow-hidden transition ease-in duration-300 transform translate-x-full"
     >
         <nav
             class="flex flex-col items-center justify-between gap-10 pt-8 my-auto w-full"
@@ -78,14 +78,14 @@ import { linkedin, github } from "@data/socials";
                     class="hover:scale-125 transition duration-300 ease-in z-20"
                     aria-label="Ver perfil de LinkedIn"
                 >
-                    <LinkedinIcon class="size-6 fill-primary" />
+                    <LinkedinIcon class="size-8 fill-primary" />
                 </a>
                 <a
                     href={github}
                     class="hover:scale-125 transition duration-300 ease-in z-20"
                     aria-label="Ver perfil de Github"
                 >
-                    <GithubIcon class="size-6 fill-primary" />
+                    <GithubIcon class="size-8 fill-primary" />
                 </a>
             </div>
         </nav>

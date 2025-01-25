@@ -1,41 +1,65 @@
 ---
 // COMPONENTS
 import MapPinIcon from "@components/icons/MapPinIcon.astro";
-import Container from "@components/Container.astro";
-import ProfileImage from "@components/images/ProfileImage.astro";
+import ContainerCard from "@components/ContainerCard.astro";
+import TypescriptIcon from "@components/icons/TypescriptIcon.astro";
+import Nodejs from "@components/icons/Nodejs.astro";
+import React from "@components/icons/React.astro";
+import Tailwindcss from "@components/icons/Tailwindcss.astro";
+import Python from "@components/icons/Python.astro";
+import Postgresql from "@components/icons/Postgresql.astro";
 ---
 
-<section id="about" class="pt-24 pb-8">
-    <Container>
-        <div class="flex flex-col sm:grid sm:grid-cols-5 gap-8">
-            <picture
-                class="col-span-2 flex flex-row items-center justify-start w-full"
-            >
-                <ProfileImage />
-            </picture>
+<section id="about" class="pt-28 pb-8">
+    <ContainerCard>
+        <div class="flex flex-col sm:grid sm:grid-cols-5 gap-8 rounded-lg">
+            <div class="col-span-2 flex">
+                <h2 class="py-4 text-4xl lg:text-5xl font-extrabold text-white">
+                    Sobre mí.
+                </h2>
+            </div>
             <div
                 class="flex flex-col items-center justify-center gap-4 col-span-3"
             >
                 <p
-                    class="flex flex-row items-center justify-start gap-1 font-semibold md:text-lg w-full text-nowrap"
+                    class="flex flex-row items-center justify-start gap-1 font-semibold md:text-lg w-full text-nowrap text-white"
                 >
                     <MapPinIcon class="size-6 fill-accent" /> Santiago, Chile
                 </p>
-                <p
-                    class="text-left text-primary text-balance text-base lg:text-lg"
-                >
-                    Hola, soy Francisco Castillo Hernández y me apasiona el
-                    desarrollo web. Actualmente estudio <span
-                        class="font-semibold">Ingeniería Civil Telemática</span
+                <p class="text-left text-muted text-base lg:text-lg">
+                    Diseño y desarrollo <span
+                        class="font-semibold text-secondary brightness-150"
+                        >aplicaciones web y móviles</span
                     >
-                    en la Universidad Técnica Federico Santa María. En mi tiempo
-                    libre, me dedico a
-                    <span class="text-accent font-semibold"
-                        >desarrollar aplicaciones web</span
-                    >
-                    usando TypeScript, React y Node.js.
+                    con un enfoque en resolver necesidades reales, como la gestión
+                    de datos, la automatización de tareas y la mejora de la experiencia
+                    del usuario.
                 </p>
+                <p class="text-left text-muted text-base lg:text-lg">
+                    Actualmente, soy estudiante de <span
+                        class="text-secondary brightness-150 font-semibold"
+                        >Ingeniería Civil Telemática</span
+                    >
+                    en la Universidad Técnica Federico Santa María.
+                </p>
+                <div class="w-full pt-4">
+                    <h3
+                        class="py-4 text-2xl lg:text-3xl font-extrabold text-white"
+                    >
+                        Tecnologías
+                    </h3>
+                    <div class="flex flex-col gap-4">
+                        <div class="w-full flex flex-wrap gap-6">
+                            <TypescriptIcon class="size-12" />
+                            <React class="size-12" />
+                            <Tailwindcss class="size-12" />
+                            <Nodejs class="size-12" />
+                            <Postgresql class="size-12" />
+                            <Python class="size-12" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </Container>
+    </ContainerCard>
 </section>
