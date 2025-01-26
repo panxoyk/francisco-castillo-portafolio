@@ -3,22 +3,20 @@
 import Layout from "@layouts/Layout.astro";
 
 // COMPONENTS
-import Container from "@components/Container.astro";
+import LinkButton from "@components/LinkButton.astro";
+import LinkIcon from "@components/LinkIcon.astro";
 import ProjectImage from "@components/images/ProjectImage.astro";
+import GithubIcon from "@components/icons/GithubIcon.astro";
 
 // TYPES
-import type { Project } from "src/types"
+import type { Project } from "src/types";
 
 // DATA
 import { projects } from "@data/projects";
-import ContainerCard from "@components/ContainerCard.astro";
-import LinkButton from "@components/LinkButton.astro";
-import LinkIcon from "@components/LinkIcon.astro";
-import GithubIcon from "@components/icons/GithubIcon.astro";
 
 export const getStaticPaths = () => {
     return projects.map((project: Project) => ({
-        params: { project: project.href }
+        params: { project: project.href },
     }));
 };
 
@@ -37,41 +35,56 @@ const {
 ---
 
 <Layout title={name}>
-        <section id={href} class="pt-32 pb-12 px-4">
-            <div class="md:max-w-5xl md:mx-auto">
-                <div class="flex flex-col md:flex-row md:gap-12">
-                    <div class="flex flex-col md:flex-row gap-8 justify-center">
-                        <div class="max-w-lg md:min-w-96 rounded-lg flex flex-col gap-4">
-                            <ProjectImage src={img.path} alt={img.alt} />
-                            <div class="flex flex-row gap-8 w-full">
-                                <LinkIcon label="Ver el código fuente" href={sourceCode}>
-                                    <GithubIcon class="h-full pr-8 md:pr-0 fill-primary" />
-                                </LinkIcon>
-                                <LinkButton label="Visitar sitio web" href={demo} variant="secondary" />
-                            </div>
+    <section id={href} class="pt-32 pb-12 px-4">
+        <div class="md:max-w-5xl md:mx-auto">
+            <div class="flex flex-col md:flex-row md:gap-12">
+                <div class="flex flex-col md:flex-row gap-8 justify-center">
+                    <div
+                        class="max-w-lg md:min-w-96 rounded-lg flex flex-col gap-4"
+                    >
+                        <ProjectImage src={img.path} alt={img.alt} />
+                        <div class="flex flex-row gap-8 w-full">
+                            <LinkIcon
+                                label="Ver el código fuente"
+                                href={sourceCode}
+                            >
+                                <GithubIcon
+                                    class="h-full pr-8 md:pr-0 fill-primary"
+                                />
+                            </LinkIcon>
+                            <LinkButton
+                                label="Visitar sitio web"
+                                href={demo}
+                                variant="secondary"
+                            />
                         </div>
                     </div>
-                    <div class="max-w-lg md:max-w-md">
-                        <h1
-                            class="pt-12 md:p-0 w-full text-4xl lg:text-5xl font-extrabold text-primary text-left text-pretty"
-                        >
-                            {name}
-                        </h1>
-                        <p class="text-secondary text-xl lg:text-2xl font-semibold">
-                            {date}. {category}
-                        </p>
-                        <p class="text-base md:text-lg text-primary pt-8 pb-12 text-balance">
-                            {description}
-                        </p>
-                    </div>
                 </div>
-                <div class="flex flex-wrap flex-row gap-2">
-                    {tags!.map(
-                        (tag) => <span class="text-primary border border-primary bg-white px-2 rounded-lg text-base md:text-lg">
-                            {tag}
-                        </span>
-                    )}
+                <div class="max-w-lg md:max-w-md">
+                    <h1
+                        class="pt-12 md:p-0 w-full text-4xl lg:text-5xl font-extrabold text-primary text-left text-pretty"
+                    >
+                        {name}
+                    </h1>
+                    <p class="text-secondary text-xl lg:text-2xl font-semibold">
+                        {date}. {category}
+                    </p>
+                    <p
+                        class="text-base md:text-lg text-primary pt-8 pb-12 text-balance"
+                    >
+                        {description}
+                    </p>
                 </div>
             </div>
-        </section>
+            <div class="flex flex-wrap flex-row gap-2">
+                {
+                    tags!.map((tag) => (
+                        <span class="text-primary border border-primary bg-white px-2 rounded-lg text-base md:text-lg">
+                            {tag}
+                        </span>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
 </Layout>

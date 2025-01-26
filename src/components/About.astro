@@ -9,7 +9,16 @@ import TailwindcssIcon from "@components/icons/TailwindcssIcon.astro";
 import PythonIcon from "@components/icons/PythonIcon.astro";
 import PostgresqlIcon from "@components/icons/PostgresqlIcon.astro";
 import LinkIcon from "@components/LinkIcon.astro";
-import { typescript, react, tailwindcss, nodejs, postgresql, python } from "@data/techs";
+
+// DATA
+import {
+    typescript,
+    react,
+    tailwindcss,
+    nodejs,
+    postgresql,
+    python,
+} from "@data/techs";
 ---
 
 <section id="about" class="pt-28 pb-8">
@@ -52,22 +61,40 @@ import { typescript, react, tailwindcss, nodejs, postgresql, python } from "@dat
                     </h3>
                     <div class="flex flex-col gap-4">
                         <div class="w-full flex flex-wrap gap-6">
-                            <LinkIcon href={typescript.url} label=`Visitar sitio web oficial de ${typescript.name}`>
+                            <LinkIcon
+                                href={typescript.url}
+                                label=`Visitar sitio web oficial de ${typescript.name}`
+                            >
                                 <TypescriptIcon class="size-12" />
                             </LinkIcon>
-                            <LinkIcon href={react.url} label=`Visitar sitio web oficial de ${react.name}`>
+                            <LinkIcon
+                                href={react.url}
+                                label=`Visitar sitio web oficial de ${react.name}`
+                            >
                                 <ReactIcon class="size-12" />
                             </LinkIcon>
-                            <LinkIcon href={tailwindcss.url} label=`Visitar sitio web oficial de ${tailwindcss.name}`>
+                            <LinkIcon
+                                href={tailwindcss.url}
+                                label=`Visitar sitio web oficial de ${tailwindcss.name}`
+                            >
                                 <TailwindcssIcon class="size-12" />
                             </LinkIcon>
-                            <LinkIcon href={nodejs.url} label=`Visitar sitio web oficial de ${nodejs.name}`>
+                            <LinkIcon
+                                href={nodejs.url}
+                                label=`Visitar sitio web oficial de ${nodejs.name}`
+                            >
                                 <NodejsIcon class="size-12" />
                             </LinkIcon>
-                            <LinkIcon href={postgresql.url} label=`Visitar sitio web oficial de ${postgresql.name}`>
+                            <LinkIcon
+                                href={postgresql.url}
+                                label=`Visitar sitio web oficial de ${postgresql.name}`
+                            >
                                 <PostgresqlIcon class="size-12" />
                             </LinkIcon>
-                            <LinkIcon href={python.url} label=`Visitar sitio web oficial de ${python.name}`>
+                            <LinkIcon
+                                href={python.url}
+                                label=`Visitar sitio web oficial de ${python.name}`
+                            >
                                 <PythonIcon class="size-12" />
                             </LinkIcon>
                         </div>

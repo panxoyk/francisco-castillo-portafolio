@@ -2,7 +2,6 @@
 // COMPONENTS
 import Container from "@components/Container.astro";
 import LinkButton from "@components/LinkButton.astro";
-import NavBar from "@components/NavBar.astro";
 import MailIcon from "@components/icons/MailIcon.astro";
 import ProfileImage from "@components/images/ProfileImage.astro";
 
@@ -30,9 +29,14 @@ import { email } from "@data/socials";
                     >
                         Francisco Castillo H.
                     </h1>
-                    <p class="text-xl text-primary">Desarrollador de software</p>
+                    <p class="text-xl text-primary">
+                        Desarrollador de software
+                    </p>
                     <div class="flex justify-start my-4">
-                        <LinkButton label="Descargar CV" href="CV-Francisco-Castillo.pdf" />
+                        <LinkButton
+                            label="Descargar CV"
+                            href="CV-Francisco-Castillo.pdf"
+                        />
                     </div>
                 </div>
                 <picture
