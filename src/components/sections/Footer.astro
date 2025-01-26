@@ -1,9 +1,6 @@
 ---
 import { baseUrl } from "src/config";
 
-// COMPONENTS
-import SendEmailScript from "@components/scripts/SendEmailScript.astro";
-
 // DATA
 import { repository } from "@data/socials";
 ---
@@ -49,4 +46,17 @@ import { repository } from "@data/socials";
         </div>
     </div>
 </footer>
-<SendEmailScript />
+<script>
+    // DATA
+    import { email } from "@data/socials";
+
+    const emailButton = document.getElementById("send-email");
+    const emailFooter = document.getElementById("send-email-footer");
+
+    const sendEmail = (): void => {
+        window.location.href = `mailto:${email}`;
+    };
+
+    emailButton?.addEventListener("click", sendEmail);
+    emailFooter?.addEventListener("click", sendEmail);
+</script>
