@@ -8,13 +8,10 @@ export default {
 		},
 		extend: {
 			colors: {
-				"background": "#faf8fd",
 				"primary": "#2b333f",
 				"secondary": "#136df5",
 				"accent": "#eb322d",
 				"muted": "#e5e5e5",
-				"success": "#22d85e",
-				"danger": "#df3c48",
 				"black": "#050506",
 				"white": "#f5f1f3",
 			},

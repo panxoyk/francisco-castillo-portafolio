@@ -7,6 +7,7 @@ import LinkedinIcon from "@components/icons/LinkedinIcon.astro";
 // DATA
 import { sections } from "@data/sections";
 import { linkedin, github } from "@data/socials";
+import LinkIcon from "./LinkIcon.astro";
 ---
 
 <div class="relative">
@@ -73,20 +74,12 @@ import { linkedin, github } from "@data/socials";
         >
             {sections.map((section) => <NavbarItem section={section} />)}
             <div class="flex flex-row items-center gap-8 p-2">
-                <a
-                    href={linkedin}
-                    class="hover:scale-125 transition duration-300 ease-in z-20"
-                    aria-label="Ver perfil de LinkedIn"
-                >
+                <LinkIcon href={linkedin} label="Ver perfil de LinkedIn">
                     <LinkedinIcon class="size-8 fill-primary" />
-                </a>
-                <a
-                    href={github}
-                    class="hover:scale-125 transition duration-300 ease-in z-20"
-                    aria-label="Ver perfil de Github"
-                >
+                </LinkIcon>
+                <LinkIcon href={github} label="Ver perfil de Github">
                     <GithubIcon class="size-8 fill-primary" />
-                </a>
+                </LinkIcon>
             </div>
         </nav>
     </div>

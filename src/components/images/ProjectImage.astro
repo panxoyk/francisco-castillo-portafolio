@@ -17,8 +17,8 @@ const imageSrc = await images[`/src/assets/${src}`]();
 
 <Image
     {...Astro.props}
-    class="absolute inset-0 object-cover object-center size-full"
+    class="rounded-lg w-full"
     src={imageSrc.default}
     alt={alt}
-    loading="lazy"
+    loading="eager"
 />

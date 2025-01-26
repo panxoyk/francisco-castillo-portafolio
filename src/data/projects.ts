@@ -2,30 +2,23 @@ import type { Project } from "src/types";
 
 export const projects: Project[] = [
     {
-        name: "Proyecto 1",
+        name: "Calculadora de nota final",
+        href: "calculadora-nota-final",
         img: {
-            path: "proyecto1.jpeg",
-            alt: "Proyecto 1",
+            path: "calculadora-nota-final.png",
+            alt: "Imagen de Calculadora de nota final",
         },
-        category: "Categoría",
-        date: "Mes, 2024",
-    },
-    {
-        name: "Proyecto 2",
-        img: {
-            path: "proyecto2.jpeg",
-            alt: "Proyecto 2",
-        },
-        category: "Categoría",
-        date: "Mes, 2024"
-    },
-    {
-        name: "Proyecto 3",
-        img: {
-            path: "proyecto3.jpeg",
-            alt: "Proyecto 3",
-        },
-        category: "Categoría",
-        date: "Mes, 2024",
+        category: "Aplicación web",
+        date: "2024",
+        description: "Este proyecto es una aplicación web que permite a los estudiantes ingresar evaluaciones simples y ponderadas, y ver en tiempo real el promedio final de la asignatura. El proyecto se desarrolló en React con TypeScript y se utilizó Zustand para el manejo de estados, mientras que la interfaz se estilizó mediante las clases de Tailwind CSS y componentes de Shadcn/ui.",
+        tags: [
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Zustand",
+            "Shadcn/ui",
+        ],
+        sourceCode: "https://github.com/panxoyk/calculadora-nota-final",
+        demo: "https://calculadora-nota-final.vercel.app/",
     },
 ];

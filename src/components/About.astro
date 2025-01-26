@@ -3,11 +3,13 @@
 import MapPinIcon from "@components/icons/MapPinIcon.astro";
 import ContainerCard from "@components/ContainerCard.astro";
 import TypescriptIcon from "@components/icons/TypescriptIcon.astro";
-import Nodejs from "@components/icons/Nodejs.astro";
-import React from "@components/icons/React.astro";
-import Tailwindcss from "@components/icons/Tailwindcss.astro";
-import Python from "@components/icons/Python.astro";
-import Postgresql from "@components/icons/Postgresql.astro";
+import NodejsIcon from "@components/icons/NodejsIcon.astro";
+import ReactIcon from "@components/icons/ReactIcon.astro";
+import TailwindcssIcon from "@components/icons/TailwindcssIcon.astro";
+import PythonIcon from "@components/icons/PythonIcon.astro";
+import PostgresqlIcon from "@components/icons/PostgresqlIcon.astro";
+import LinkIcon from "@components/LinkIcon.astro";
+import { typescript, react, tailwindcss, nodejs, postgresql, python } from "@data/techs";
 ---
 
 <section id="about" class="pt-28 pb-8">
@@ -22,7 +24,7 @@ import Postgresql from "@components/icons/Postgresql.astro";
                 class="flex flex-col items-center justify-center gap-4 col-span-3"
             >
                 <p
-                    class="flex flex-row items-center justify-start gap-1 font-semibold md:text-lg w-full text-nowrap text-white"
+                    class="flex flex-row items-center justify-start gap-1 font-semibold md:text-lg w-full text-nowrap text-muted"
                 >
                     <MapPinIcon class="size-6 fill-accent" /> Santiago, Chile
                 </p>
@@ -44,18 +46,30 @@ import Postgresql from "@components/icons/Postgresql.astro";
                 </p>
                 <div class="w-full pt-4">
                     <h3
-                        class="py-4 text-2xl lg:text-3xl font-extrabold text-white"
+                        class="py-4 text-2xl lg:text-3xl font-extrabold text-muted"
                     >
                         Tecnologías
                     </h3>
                     <div class="flex flex-col gap-4">
                         <div class="w-full flex flex-wrap gap-6">
-                            <TypescriptIcon class="size-12" />
-                            <React class="size-12" />
-                            <Tailwindcss class="size-12" />
-                            <Nodejs class="size-12" />
-                            <Postgresql class="size-12" />
-                            <Python class="size-12" />
+                            <LinkIcon href={typescript.url} label=`Visitar sitio web oficial de ${typescript.name}`>
+                                <TypescriptIcon class="size-12" />
+                            </LinkIcon>
+                            <LinkIcon href={react.url} label=`Visitar sitio web oficial de ${react.name}`>
+                                <ReactIcon class="size-12" />
+                            </LinkIcon>
+                            <LinkIcon href={tailwindcss.url} label=`Visitar sitio web oficial de ${tailwindcss.name}`>
+                                <TailwindcssIcon class="size-12" />
+                            </LinkIcon>
+                            <LinkIcon href={nodejs.url} label=`Visitar sitio web oficial de ${nodejs.name}`>
+                                <NodejsIcon class="size-12" />
+                            </LinkIcon>
+                            <LinkIcon href={postgresql.url} label=`Visitar sitio web oficial de ${postgresql.name}`>
+                                <PostgresqlIcon class="size-12" />
+                            </LinkIcon>
+                            <LinkIcon href={python.url} label=`Visitar sitio web oficial de ${python.name}`>
+                                <PythonIcon class="size-12" />
+                            </LinkIcon>
                         </div>
                     </div>
                 </div>

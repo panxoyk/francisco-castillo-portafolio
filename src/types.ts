@@ -5,12 +5,22 @@ export type Section = {
 
 export type Project = {
     name: string,
-    img: imageProject,
+    href: string,
+    img: ImageProject,
     category: string,
     date: string,
+    description?: string,
+    tags?: string[],
+    sourceCode?: string,
+    demo?: string,
 };
 
-type imageProject = {
+type ImageProject = {
     path: string,
     alt: string,
+};
+
+export type Tech = {
+    name: string;
+    url: string;
 };

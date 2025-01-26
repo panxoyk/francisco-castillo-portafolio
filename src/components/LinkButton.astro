@@ -2,15 +2,26 @@
 type Props = {
     label: string;
     href?: string;
+    variant?: "primary" | "secondary";
 };
 
-const { label, href } = Astro.props;
+const { label, href, variant } = Astro.props;
+
+let className: string = "";
+
+switch (variant) {
+    case "secondary":
+        className = "w-full text-muted font-semibold bg-primary rounded-lg py-2 hover:text-white hover:scale-105 transition duration-300 ease-in";
+        break;
+    default:
+        className = "w-full se:w-fit px-6 py-3 font-semibold text-white bg-accent text-xl border border-white rounded-lg hover:brightness-125 hover:border-primary transition ease-in duration-300 cursor-pointer";
+        break;
+};
 ---
 
 <a
     href={href}
-    class="w-full se:w-fit px-6 py-3 font-semibold text-center text-white bg-accent relative z-10 text-xl
-    border border-black rounded-lg hover:brightness-125 transition ease-in duration-300 cursor-pointer"
+    class={`cursor-pointer text-center ${className}`}
 >
     {label}
 </a>
