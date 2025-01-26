@@ -1,4 +1,9 @@
 ---
+import { baseUrl } from "src/config";
+
+// COMPONENTS
+import SendEmailScript from "@components/scripts/sendEmailScript.astro";
+
 // DATA
 import { repository } from "@data/socials";
 ---
@@ -16,7 +21,7 @@ import { repository } from "@data/socials";
                 <div>
                     <a
                         class="text-primary font-semibold transition duration-300 hover:text-accent cursor-pointer"
-                        href="CV-Francisco-Castillo.pdf"
+                        href=`${baseUrl}/CV-Francisco-Castillo.pdf`
                     >
                         Descargar CV
                     </a>
@@ -44,3 +49,4 @@ import { repository } from "@data/socials";
         </div>
     </div>
 </footer>
+<SendEmailScript />

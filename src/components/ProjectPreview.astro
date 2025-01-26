@@ -1,5 +1,5 @@
 ---
-// TYPES
+import { baseUrl } from "src/config";
 import type { Project } from "src/types";
 
 // COMPONENTS
@@ -13,7 +13,7 @@ const { project } = Astro.props;
 ---
 
 <a
-    href={project.href}
+    href=`${baseUrl}/${project.href}`
     class="shadow border border-white rounded-lg overflow-hidden cursor-pointer"
 >
     <div class="relative h-64 group">

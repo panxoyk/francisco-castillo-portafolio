@@ -1,4 +1,6 @@
 ---
+import { baseUrl } from "src/config";
+
 //LAYOUT
 import Layout from "@layouts/Layout.astro";
 
@@ -18,7 +20,7 @@ import LinkButton from "@components/LinkButton.astro";
             >
                 Esta página no existe, comprueba la url
             </p>
-            <LinkButton label="Ir al inicio" href="/" />
+            <LinkButton label="Ir al inicio" href={baseUrl} visitWeb />
         </div>
     </Container>
 </Layout>
