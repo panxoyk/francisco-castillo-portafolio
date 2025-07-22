@@ -2,6 +2,24 @@ import type { Project } from "src/types";
 
 export const projects: Project[] = [
     {
+        name: "U Tasker App",
+        href: "u-tasker-app",
+        img: {
+            path: "u-tasker-app.png",
+            alt: "Imagen de U Tasker App",
+        },
+        category: "Aplicación web",
+        date: "2025",
+        description: "Aplicación web desarrollada con Next.js para la gestión académica de estudiantes. Permite organizar tareas por estado, visualizar horarios semanales de clases, y cuenta con un sistema de autenticación seguro y proceso de onboarding guiado. Diseñada para optimizar la planificación y el seguimiento del rendimiento académico.",
+        tags: [
+            "Next.js",
+            "Material UI",
+            "Supabase",
+        ],
+        sourceCode: "https://github.com/panxoyk/u-tasker-app",
+        demo: "https://u-tasker-app.vercel.app",
+    },
+    {
         name: "Calculadora de nota final",
         href: "calculadora-nota-final",
         img: {
